@@ -1,0 +1,109 @@
+@import "node_modules/normalize.css/normalize";
+@import "node_modules/flexboxgrid/dist/flexboxgrid.min";
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  background-color: #31aedc;
+  color: #12367e;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: #31aedc;
+  background-image: url(../images/background.jpg);
+  background-position: center center;
+  background-size: cover;
+
+  font-family: 'Montserrat', sans-serif;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+h1, h2 {
+  margin: 1.2em 0 0.4em;
+}
+
+h2 {
+  margin-top: 0;
+  color: #31aedc;
+  font-size: 1.2em;
+  font-weight: 400;
+}
+
+.container {
+  height: 100%;
+  padding: 15px;
+}
+
+.logo {
+  width: 100%;
+  max-width: 329px;
+}
+
+.card {
+  margin: 0 auto;
+  padding: 15px;
+  text-align: center;
+  background-color: #fff;
+  border: 1px lightgrey solid;
+  box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.30);
+  @media screen and (min-width: 48em) {
+    padding: 30px;
+  }
+}
+
+ul#countdown {
+  // border: 2px solid #1a98cc;
+  // border-width: 3px 0;
+  padding: 15px 0 0 0;
+  overflow: hidden;
+  font-weight: bold;
+  li {
+    margin: 0 -3px 0 0;
+    padding: 0;
+    display: inline-block;
+    width: 25%;
+    font-size: 72px;
+    font-size: 10vw;
+    text-align: center;
+    color: #12367e;
+    .label {
+      color: #1a98cc;
+      font-size: 18px;
+      font-size: 0.25em;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+  }
+
+  @media screen and (min-width: 48em) {
+    li {
+      font-size: 6vw;
+    }
+  }
+}
+
+footer {
+  text-align: center;
+  font-size: 0.7em;
+  font-weight: 300;
+  margin-top: 15px;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.6em;
+
+  a, a:hover, a:active {
+    color: inherit;
+  }
+}
