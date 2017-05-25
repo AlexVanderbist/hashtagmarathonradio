@@ -3,6 +3,7 @@
 namespace App\Events;
 
 use App\Tweet;
+use App\User;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Foundation\Events\Dispatchable;
@@ -13,7 +14,8 @@ class DashboardUpdate implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public $numTweets = 0;
+    public $totalTweets = 0;
+    public $totalUsers = 0;
 
     /**
      * Create a new event instance.
@@ -22,7 +24,8 @@ class DashboardUpdate implements ShouldBroadcast
      */
     public function __construct()
     {
-        $this->numTweets = Tweet::all()->count();
+        $this->totalTweets = Tweet::all()->count();
+        $this->totalUsers = User::all()->count();
     }
 
     /**

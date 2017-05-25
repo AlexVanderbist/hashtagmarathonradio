@@ -1,1 +1,87 @@
+@import "node_modules/bulma/bulma";
 
+body {
+  //padding-top: 30px;
+  font-family: 'Montserrat', sans-serif;
+  // font-size: 12px;
+  background: #FFF url('http://playground.mnm.be/steunstudenten/img/background.png') top center repeat;
+}
+
+h1, h2 {
+  font-weight: bold;
+  color: #12367E;
+}
+h3 {
+  font-size: 16px;
+}
+
+.djStat {
+  margin-bottom: 15px;
+}
+.djStat:last-child {
+  margin-bottom: 0px;
+}
+.djStat h2, .djStat h3 {
+  margin: 0;
+}
+.djStat h2 {
+  padding-top: 8px;
+  padding-bottom: 4px;
+}
+
+#logo {
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 150px;
+}
+#confetti{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.scrollable {
+  max-height: 400px;
+  overflow-y: auto;
+}
+.scrollable-sm {
+  max-height: 250px;
+}
+
+.main-content {
+  background-color: white;
+}
+
+.profileImg {
+  background-position: center;
+  background-size: cover;
+  height: 70px;
+  width: 70px;
+  border-radius: 100%;
+  float: left;
+  margin-right: 10px;
+}
+.profileImg.tom {
+  //background-image: url('../img/tom.jpg');
+}
+.profileImg.julie {
+  //background-image: url('../img/julie.jpg');
+}
+.profileImg.peter {
+  //background-image: url('../img/peter.jpg');
+}
+
+.panel-default {
+  background-color: #FFFFFF;
+  border: 2px solid #CFEAF4;
+  // margin-bottom: 26px;
+}
+.list-group-item {
+  padding: 10px 7px 10px 10px;
+}
+.badge {
+  padding: 3px 3px;
+  font-size: 9px;
+}
