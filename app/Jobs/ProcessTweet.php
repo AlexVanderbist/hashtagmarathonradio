@@ -30,7 +30,7 @@ class ProcessTweet implements ShouldQueue
         $formattedTweetedAt = Carbon::parse($this->tweet['created_at']);
         $formattedTweetedAt->setTimezone('Europe/Brussels');
 
-        Tweet::firstOrCreate(
+        Tweet::updateOrCreate(
             ['id' => $this->tweet['id']],
             [
                 'user_id' => $this->tweet['user']['id'],
