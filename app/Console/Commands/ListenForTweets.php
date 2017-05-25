@@ -39,6 +39,10 @@ class ListenForTweets extends Command
             ->publicStream()
             ->whenHears([$query], function (array $tweetProperties) {
 
+                if($tweetProperties['coordinates']) {
+                    dump($tweetProperties['coordinates']);
+                }
+
                 if (array_key_exists('limit', $tweetProperties)) {
                     Log::critical('Reached streaming limit. Godspeed to the search API.');
 

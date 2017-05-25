@@ -18,3 +18,5 @@ Route::get('/', function () {
 Route::get('/countdown', function () {
     return view('countdown');
 });
+
+Route::get('/beta', 'DashboardController@index');

@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use App\Console\Commands\BroadcastDashboardEvents;
 use App\Console\Commands\FetchTweets;
 use App\Console\Commands\ListenForTweets;
 use Illuminate\Console\Scheduling\Schedule;
@@ -17,6 +18,7 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         ListenForTweets::class,
         FetchTweets::class,
+        BroadcastDashboardEvents::class,
     ];
 
     /**

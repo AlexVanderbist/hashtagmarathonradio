@@ -3,6 +3,7 @@
 namespace App\Jobs;
 
 use App\Tweet;
+use App\User;
 use Carbon\Carbon;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
@@ -30,14 +31,25 @@ class ProcessTweet implements ShouldQueue
         $formattedTweetedAt = Carbon::parse($this->tweet['created_at']);
         $formattedTweetedAt->setTimezone('Europe/Brussels');
 
+        $user = User::firstOrCreate(
+            ['id' => $this->tweet['user']['id']],
+            [
+                'name' => $this->tweet['user']['name'],
+                'screen_name' => $this->tweet['user']['screen_name'],
+                'profile_image_url' => $this->tweet['user']['profile_image_url'],
+            ]
+        );
+
         Tweet::updateOrCreate(
             ['id' => $this->tweet['id']],
             [
                 'user_id' => $this->tweet['user']['id'],
-                'tweet' => $this->tweet['text'],
-                'tweeted_at' => $formattedTweetedAt,
+                'text' => $this->tweet['text'],
+                'country_code' => $this->tweet['place']['country_code'] ?? null,
+                'place_name' => $this->tweet['place']['full_name'] ?? null,
                 'fetched' => $this->tweet['fetched'] ?? false,
-                'dj' => -1
+                'dj' => -1,
+                'tweeted_at' => $formattedTweetedAt,
             ]
         )->save();
     }

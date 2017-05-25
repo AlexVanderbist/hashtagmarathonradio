@@ -16,7 +16,9 @@ class CreateTweetsTable extends Migration
         Schema::create('tweets', function (Blueprint $table) {
             $table->bigInteger('id')->unsigned()->unique();
             $table->bigInteger('user_id')->unsigned();
-            $table->text('tweet');
+            $table->text('text');
+            $table->string('country_code')->nullable();
+            $table->string('place_name')->nullable();
             $table->dateTime('tweeted_at');
             $table->integer('dj');
             $table->boolean('fetched')->default(false);

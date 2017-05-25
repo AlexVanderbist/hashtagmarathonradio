@@ -1,5 +1,6 @@
 @import "node_modules/normalize.css/normalize";
 @import "node_modules/flexboxgrid/dist/flexboxgrid.min";
+
 html {
   box-sizing: border-box;
 }
@@ -19,7 +20,7 @@ body {
 
 body {
   background-color: #31aedc;
-  background-image: url(../images/background.jpg);
+  background-image: url('images/background.jpg');
   background-position: center center;
   background-attachment: fixed;
   background-size: cover;

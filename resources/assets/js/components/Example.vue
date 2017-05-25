@@ -6,7 +6,7 @@
                     <div class="panel-heading">Example Component</div>
 
                     <div class="panel-body">
-                        I'm an example component!
+                        <h1>{{ numTweets }} tweets</h1>
                     </div>
                 </div>
             </div>
@@ -16,8 +16,27 @@
 
 <script>
     export default {
+        data() {
+            return {
+                'numTweets': 0
+            }
+        },
+
         mounted() {
-            console.log('Component mounted.')
+            console.log('Component mounted.');
+            this.listen();
+        },
+
+        methods: {
+            listen() {
+                console.log('listening');
+                Echo.channel('dashboard')
+                    .listen('DashboardUpdate', (e) => {
+                        console.log(e);
+
+                        this.numTweets = e.numTweets;
+                    });
+            }
         }
     }
 </script>
