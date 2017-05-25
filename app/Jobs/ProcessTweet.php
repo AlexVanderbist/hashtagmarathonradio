@@ -36,7 +36,7 @@ class ProcessTweet implements ShouldQueue
                 'user_id' => $this->tweet['user']['id'],
                 'tweet' => $this->tweet['text'],
                 'tweeted_at' => $formattedTweetedAt,
-                'fetched' => $this->tweet['fetched'] || false,
+                'fetched' => $this->tweet['fetched'] ?? false,
                 'dj' => -1
             ]
         )->save();
