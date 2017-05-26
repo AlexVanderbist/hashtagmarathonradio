@@ -2,22 +2,22 @@
     <div class="tile is-ancestor">
         <div class="tile is-parent">
             <article class="tile is-child box">
-                <tweets-per-minute></tweets-per-minute>
+                <tweets-per-minute :tweets-per-minute="statistics.tweetsPerMinute"></tweets-per-minute>
             </article>
         </div>
         <div class="tile is-parent">
             <article class="tile is-child box">
-                <total-tweets :total-tweets="totalTweets"></total-tweets>
+                <total-tweets :total-tweets="statistics.totalTweets"></total-tweets>
             </article>
         </div>
         <div class="tile is-parent">
             <article class="tile is-child box">
-                <total-users :total-users="totalUsers"></total-users>
+                <total-users :total-users="statistics.totalUsers"></total-users>
             </article>
         </div>
         <div class="tile is-parent">
             <article class="tile is-child box">
-                <highscores></highscores>
+                <highscores :users="statistics.usersWithMostTweets"></highscores>
             </article>
         </div>
     </div>
@@ -34,8 +34,7 @@
 
         data() {
             return {
-                totalTweets: null,
-                totalUsers: null,
+                statistics: {}
             }
         },
 
@@ -49,8 +48,7 @@
                     .listen('DashboardUpdate', (e) => {
                         console.log(e);
 
-                        this.totalTweets = e.totalTweets;
-                        this.totalUsers = e.totalUsers;
+                        this.statistics = e;
                     });
             }
         }
