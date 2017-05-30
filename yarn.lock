@@ -3980,6 +3980,10 @@ number-is-nan@^1.0.0:
   version "1.0.1"
   resolved "https://npm.spatie.be/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
 
+numeral@^2.0.6:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/numeral/-/numeral-2.0.6.tgz#4ad080936d443c2561aed9f2197efffe25f4e506"
+
 oauth-sign@~0.8.1:
   version "0.8.2"
   resolved "https://npm.spatie.be/oauth-sign/-/oauth-sign-0.8.2.tgz#46a6ab7f0aead8deae9ec0565780b7d4efeb9d43"
@@ -4929,6 +4933,12 @@ shebang-regex@^1.0.0:
 shellwords@^0.1.0:
   version "0.1.0"
   resolved "https://npm.spatie.be/shellwords/-/shellwords-0.1.0.tgz#66afd47b6a12932d9071cbfd98a52e785cd0ba14"
+
+shifty@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/shifty/-/shifty-2.1.0.tgz#571c5be8bf3c2c38fb959bdd7d3149406bd303f2"
+  dependencies:
+    object-assign "^4.1.1"
 
 sigmund@^1.0.1:
   version "1.0.1"

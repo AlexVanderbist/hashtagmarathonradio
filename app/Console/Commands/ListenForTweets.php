@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use App\Jobs\ProcessTweet;
 use App\Tweet;
 use Carbon\Carbon;
+use Log;
 use Illuminate\Console\Command;
 use Spatie\LaravelTwitterStreamingApi\TwitterStreamingApi;
 

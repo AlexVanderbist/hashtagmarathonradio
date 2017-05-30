@@ -1,15 +1,20 @@
 <template>
-    <div>
-        <h2>
+    <div class="metric-panel__content">
+        <h2>twitteraars met #marathonradio</h2>
+
+        <p class="title is-1">
             <i class="fa fa-twitter" aria-hidden="true"></i>
-            <span>{{ totalUsers || 'Laden...' }}</span>
-        </h2>
-        <h3>twitteraars met #marathonradio</h3>
+            <animated-number :number="totalUsers"></animated-number>
+        </p>
     </div>
 </template>
 
 <script>
+    import AnimatedNumber from './AnimatedNumber';
+
     export default {
         props: ['totalUsers'],
+
+        components: { AnimatedNumber },
     }
 </script>

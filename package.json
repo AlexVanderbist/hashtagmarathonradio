@@ -22,6 +22,8 @@
   "dependencies": {
     "bulma": "^0.4.1",
     "laravel-echo": "^1.3.0",
-    "pusher-js": "^4.1.0"
+    "numeral": "^2.0.6",
+    "pusher-js": "^4.1.0",
+    "shifty": "^2.1.0"
   }
 }

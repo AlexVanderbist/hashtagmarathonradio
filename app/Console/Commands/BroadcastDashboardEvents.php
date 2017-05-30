@@ -29,12 +29,14 @@ class BroadcastDashboardEvents extends Command
      */
     public function handle()
     {
+        event(new DashboardUpdate());
+
         $loop = Factory::create();
 
         $seconds = 5;
 
         $loop->addPeriodicTimer($seconds, function () {
-            echo "Tick\n";
+            $this->info('Broadcasting dashboard update');
             event(new DashboardUpdate());
         });
 

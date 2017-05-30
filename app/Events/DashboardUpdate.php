@@ -10,6 +10,8 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
+use Cache;
+use DB;
 
 class DashboardUpdate implements ShouldBroadcast
 {
@@ -22,15 +24,25 @@ class DashboardUpdate implements ShouldBroadcast
 
     public function __construct()
     {
+        // TODO: move to repository
+
+//        $s = microtime(true);
+
         $this->totalTweets = Tweet::all()->count();
 
         $this->totalUsers = User::all()->count();
 
         $this->tweetsPerMinute = Tweet::where('tweeted_at', '>', Carbon::now()->subMinute())->count();
 
-        // NEED TO CACHE THIS HARD
-        $this->usersWithMostTweets = User::withCount('tweets')->orderBy('tweets_count', 'desc')->take(50)->get()->toArray(); // toArray to keep count lol
+        $this->usersWithMostTweets =  DB::table('users')
+                ->select('users.*', DB::raw('count(*) as tweets_count'))
+                ->join('tweets', 'users.id', 'tweets.user_id')
+                ->groupBy('id')
+                ->orderBy('tweets_count', 'desc')
+                ->limit(50)
+                ->get();
 
+//        dump(microtime(true) - $s);
     }
 
     public function broadcastOn(): Channel

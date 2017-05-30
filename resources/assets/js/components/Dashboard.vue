@@ -1,22 +1,22 @@
 <template>
     <div class="tile is-ancestor">
         <div class="tile is-parent">
-            <article class="tile is-child box">
+            <article class="tile is-child metric-panel">
                 <tweets-per-minute :tweets-per-minute="statistics.tweetsPerMinute"></tweets-per-minute>
             </article>
         </div>
         <div class="tile is-parent">
-            <article class="tile is-child box">
+            <article class="tile is-child metric-panel">
                 <total-tweets :total-tweets="statistics.totalTweets"></total-tweets>
             </article>
         </div>
         <div class="tile is-parent">
-            <article class="tile is-child box">
+            <article class="tile is-child metric-panel">
                 <total-users :total-users="statistics.totalUsers"></total-users>
             </article>
         </div>
         <div class="tile is-parent">
-            <article class="tile is-child box">
+            <article class="tile is-child metric-panel">
                 <highscores :users="statistics.usersWithMostTweets"></highscores>
             </article>
         </div>

@@ -1,4 +1,10 @@
-@import "node_modules/bulma/bulma";
+
+$mnm-lightblue: #CFEAF4;
+$mnm-blue: #12367E;
+$primary: $mnm-blue;
+//$primary-invert: $pink-invert;
+
+@import "~bulma/bulma";
 
 body {
   //padding-top: 30px;
@@ -7,9 +13,43 @@ body {
   background: #FFF url('http://playground.mnm.be/steunstudenten/img/background.png') top center repeat;
 }
 
+.scrollable {
+  max-height: 50vh;
+  overflow-y: scroll;
+}
+
+.metric-panel {
+  background-color: #FFFFFF;
+  border: 2px solid $mnm-lightblue;
+  border-radius: 7px;
+  text-align: center;
+  .metric-panel__content {
+    padding: 0.75em;
+  }
+}
+
+.fancy-list {
+  border-top: 1px solid #dbdbdb;
+  text-align: left;
+  li {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    padding: 0.5em 0.75em;
+    border-bottom: 1px solid #dbdbdb;
+  }
+}
+
+.hero,
+.section,
+.footer {
+  background: none;
+}
+
+
 h1, h2 {
   font-weight: bold;
-  color: #12367E;
+  color: $mnm-blue;
 }
 h3 {
   font-size: 16px;
@@ -34,26 +74,6 @@ h3 {
   width: 100%;
   max-width: 150px;
 }
-#confetti{
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-}
-
-.scrollable {
-  max-height: 400px;
-  overflow-y: auto;
-}
-.scrollable-sm {
-  max-height: 250px;
-}
-
-.main-content {
-  background-color: white;
-}
-
 .profileImg {
   background-position: center;
   background-size: cover;
@@ -71,17 +91,4 @@ h3 {
 }
 .profileImg.peter {
   //background-image: url('../img/peter.jpg');
-}
-
-.panel-default {
-  background-color: #FFFFFF;
-  border: 2px solid #CFEAF4;
-  // margin-bottom: 26px;
-}
-.list-group-item {
-  padding: 10px 7px 10px 10px;
-}
-.badge {
-  padding: 3px 3px;
-  font-size: 9px;
 }
