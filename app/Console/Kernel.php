@@ -5,6 +5,7 @@ namespace App\Console;
 use App\Console\Commands\BroadcastDashboardEvents;
 use App\Console\Commands\FetchTweets;
 use App\Console\Commands\ListenForTweets;
+use App\Console\Commands\RestartDashboardBroadcast;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -19,6 +20,7 @@ class Kernel extends ConsoleKernel
         ListenForTweets::class,
         FetchTweets::class,
         BroadcastDashboardEvents::class,
+        RestartDashboardBroadcast::class,
     ];
 
     /**

@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Events\DashboardUpdate;
+use Illuminate\Cache\Repository;
 use Illuminate\Console\Command;
 use React\EventLoop\Factory;
 
@@ -22,6 +23,16 @@ class BroadcastDashboardEvents extends Command
      */
     protected $description = 'Broadcast every 5 seconds to the dashboard';
 
+    /** @var  Repository */
+    protected $cache;
+
+    public function __construct(Repository $cacheRepository)
+    {
+        parent::__construct();
+
+        $this->cache = $cacheRepository;
+    }
+
     /**
      * Execute the console command.
      *
@@ -29,17 +40,45 @@ class BroadcastDashboardEvents extends Command
      */
     public function handle()
     {
+        $lastRestart = $this->getTimestampOfLastRestart();
+
         event(new DashboardUpdate());
 
         $loop = Factory::create();
 
         $seconds = 5;
 
-        $loop->addPeriodicTimer($seconds, function () {
+        $loop->addPeriodicTimer($seconds, function () use ($lastRestart, $loop) {
+            if ($this->shouldRestart($lastRestart)) {
+                $loop->stop();
+
+                $this->info('Received restart signal. Restarting...');
+
+                return;
+            }
+
             $this->info('Broadcasting dashboard update');
+
             event(new DashboardUpdate());
         });
 
         $loop->run();
+    }
+
+    protected function shouldRestart($lastRestart): Bool
+    {
+        return $this->getTimestampOfLastRestart() != $lastRestart;
+    }
+
+    /**
+     * Get the last restart timestamp, or null.
+     *
+     * @return int|null
+     */
+    protected function getTimestampOfLastRestart()
+    {
+        if ($this->cache) {
+            return $this->cache->get('dashboard:broadcast:restart');
+        }
     }
 }
