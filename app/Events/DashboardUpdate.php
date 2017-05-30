@@ -26,7 +26,7 @@ class DashboardUpdate implements ShouldBroadcast
     {
         // TODO: move to repository
 
-//        $s = microtime(true);
+        $startTime = microtime(true);
 
         $this->totalTweets = Tweet::all()->count();
 
@@ -42,7 +42,7 @@ class DashboardUpdate implements ShouldBroadcast
                 ->limit(50)
                 ->get();
 
-//        dump(microtime(true) - $s);
+        $this->debug('Processing time: ' . microtime(true) - $startTime);
     }
 
     public function broadcastOn(): Channel
