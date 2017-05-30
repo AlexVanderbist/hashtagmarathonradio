@@ -42,7 +42,7 @@ class DashboardUpdate implements ShouldBroadcast
                 ->limit(50)
                 ->get();
 
-        $this->debug('Processing time: ' . microtime(true) - $startTime);
+        echo 'Processing time: ' . microtime(true) - $startTime;
     }
 
     public function broadcastOn(): Channel
