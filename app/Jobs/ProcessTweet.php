@@ -48,7 +48,7 @@ class ProcessTweet implements ShouldQueue
                 'country_code' => $this->tweet['place']['country_code'] ?? null,
                 'place_name' => $this->tweet['place']['full_name'] ?? null,
                 'fetched' => $this->tweet['fetched'] ?? false,
-                'dj' => -1,
+                'dj' => getCurrentDjId(),
                 'tweeted_at' => $formattedTweetedAt,
             ]
         )->save();
