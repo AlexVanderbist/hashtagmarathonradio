@@ -19,4 +19,8 @@ Route::get('/countdown', function () {
     return view('countdown');
 });
 
+Route::get('/debug', function () {
+    dump(new \App\Events\DashboardUpdate());
+});
+
 Route::get('/beta', 'DashboardController@index');

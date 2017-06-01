@@ -169,6 +169,7 @@ return [
         Laravel\Tinker\TinkerServiceProvider::class,
         Spatie\LaravelTwitterStreamingApi\TwitterStreamingApiServiceProvider::class,
         Thujohn\Twitter\TwitterServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
 
         /*
          * Application Service Providers...
