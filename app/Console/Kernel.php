@@ -3,11 +3,13 @@
 namespace App\Console;
 
 use App\Console\Commands\BroadcastDashboardEvents;
+use App\Console\Commands\CacheUsersWithMostTweets;
 use App\Console\Commands\FetchTweets;
 use App\Console\Commands\ListenForTweets;
 use App\Console\Commands\RestartDashboardBroadcast;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Illuminate\Support\Facades\Cache;
 
 class Kernel extends ConsoleKernel
 {
@@ -21,6 +23,7 @@ class Kernel extends ConsoleKernel
         FetchTweets::class,
         BroadcastDashboardEvents::class,
         RestartDashboardBroadcast::class,
+        CacheUsersWithMostTweets::class,
     ];
 
     /**
@@ -31,7 +34,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('tweets:fetch')->everyMinute();
+        $schedule->command(FetchTweets::class)->everyMinute();
+        $schedule->command(CacheUsersWithMostTweets::class)->everyMinute();
     }
 
     /**

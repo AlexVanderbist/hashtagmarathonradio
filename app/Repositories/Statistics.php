@@ -5,9 +5,36 @@ namespace App\Repositories;
 use App\Tweet;
 use Carbon\Carbon;
 use Illuminate\Support\Collection;
+use Cache;
+use DB;
 
 class Statistics
 {
+    public static function getUsersWithMostTweets()
+    {
+        dump('getting users w most');
+        return Cache::remember('usersWithMostTweets', 1, function () {
+            dump('get new from db');
+            return self::fetchUsersWithMostTweets();
+        });
+    }
+
+    public static function cacheUsersWithMostTweets()
+    {
+        Cache::forever('usersWithMostTweets', self::fetchUsersWithMostTweets());
+    }
+
+    private static function fetchUsersWithMostTweets()
+    {
+        return DB::table('users')
+            ->select('users.*', DB::raw('count(*) as tweets_count'))
+            ->join('tweets', 'users.id', 'tweets.user_id')
+            ->groupBy('id')
+            ->orderBy('tweets_count', 'desc')
+            ->limit(50)
+            ->get();
+    }
+
     public static function getWordOccurrences(?Carbon $since = null, int $limit = 100)
     {
         $wordOccurrences = collect();

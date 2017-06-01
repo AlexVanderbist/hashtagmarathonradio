@@ -29,22 +29,15 @@ class DashboardUpdate implements ShouldBroadcast
     public function __construct()
     {
         // TODO: move to repository
-
         $startTime = microtime(true);
 
-        $this->totalTweets = Tweet::all()->count();
+        $this->totalTweets = Tweet::count();
 
-        $this->totalUsers = User::all()->count();
+        $this->totalUsers = User::count();
 
         $this->tweetsPerMinute = Tweet::where('tweeted_at', '>', Carbon::now()->subMinute())->count();
 
-        $this->usersWithMostTweets =  DB::table('users')
-                ->select('users.*', DB::raw('count(*) as tweets_count'))
-                ->join('tweets', 'users.id', 'tweets.user_id')
-                ->groupBy('id')
-                ->orderBy('tweets_count', 'desc')
-                ->limit(50)
-                ->get();
+        $this->usersWithMostTweets =  Statistics::getUsersWithMostTweets();
 
         $this->lastWordOccurrences = Statistics::getWordOccurrences(Carbon::parse('30 minutes ago'), 10);
 
