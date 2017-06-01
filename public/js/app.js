@@ -1844,6 +1844,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__WordOccurrences_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__WordOccurrences_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__HypeMeter_vue__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__HypeMeter_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__HypeMeter_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__DjTweets_vue__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__DjTweets_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__DjTweets_vue__);
 //
 //
 //
@@ -1882,6 +1884,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 
 
@@ -1891,7 +1899,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    components: { TweetsPerMinute: __WEBPACK_IMPORTED_MODULE_0__TweetsPerMinute_vue___default.a, TotalTweets: __WEBPACK_IMPORTED_MODULE_1__TotalTweets_vue___default.a, TotalUsers: __WEBPACK_IMPORTED_MODULE_2__TotalUsers_vue___default.a, Highscores: __WEBPACK_IMPORTED_MODULE_3__Highscores_vue___default.a, HypeMeter: __WEBPACK_IMPORTED_MODULE_5__HypeMeter_vue___default.a, WordOccurrences: __WEBPACK_IMPORTED_MODULE_4__WordOccurrences_vue___default.a },
+    components: { TweetsPerMinute: __WEBPACK_IMPORTED_MODULE_0__TweetsPerMinute_vue___default.a, TotalTweets: __WEBPACK_IMPORTED_MODULE_1__TotalTweets_vue___default.a, TotalUsers: __WEBPACK_IMPORTED_MODULE_2__TotalUsers_vue___default.a, Highscores: __WEBPACK_IMPORTED_MODULE_3__Highscores_vue___default.a, HypeMeter: __WEBPACK_IMPORTED_MODULE_5__HypeMeter_vue___default.a, WordOccurrences: __WEBPACK_IMPORTED_MODULE_4__WordOccurrences_vue___default.a, DjTweets: __WEBPACK_IMPORTED_MODULE_6__DjTweets_vue___default.a },
 
     data: function data() {
         return {
@@ -25901,6 +25909,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "tile is-parent"
   }, [_c('article', {
     staticClass: "tile is-child metric-panel"
+  }, [_c('dj-tweets', {
+    attrs: {
+      "tweets-per-dj": _vm.statistics.tweetsPerDj
+    }
+  })], 1)]), _vm._v(" "), _c('div', {
+    staticClass: "tile is-parent"
+  }, [_c('article', {
+    staticClass: "tile is-child metric-panel"
   }, [_c('word-occurrences', {
     attrs: {
       "occurrences": _vm.statistics.lastWordOccurrences
@@ -35856,6 +35872,88 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
      require("vue-hot-reload-api").rerender("data-v-13c2243b", module.exports)
+  }
+}
+
+/***/ }),
+/* 80 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['tweetsPerDj'],
+
+    methods: {
+        djCount: function djCount(id) {
+            if (!this.tweetsPerDj) {
+                return 0;
+            }
+
+            return this.tweetsPerDj.filter(function (dj) {
+                return dj.id == id;
+            })[0].count;
+        }
+    }
+});
+
+/***/ }),
+/* 81 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(80),
+  /* template */
+  __webpack_require__(82),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "/Users/alex/WebDev/hashtagmarathonradio/resources/assets/js/components/DjTweets.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] DjTweets.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-534c2a16", Component.options)
+  } else {
+    hotAPI.reload("data-v-534c2a16", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 82 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('ul', [_c('li', [_vm._v(_vm._s(_vm.djCount(1)))]), _vm._v(" "), _c('li', [_vm._v(_vm._s(_vm.djCount(2)))]), _vm._v(" "), _c('li', [_vm._v(_vm._s(_vm.djCount(3)))])])])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-534c2a16", module.exports)
   }
 }
 

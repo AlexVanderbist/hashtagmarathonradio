@@ -29,6 +29,11 @@
         <div class="tile is-ancestor">
             <div class="tile is-parent">
                 <article class="tile is-child metric-panel">
+                    <dj-tweets :tweets-per-dj="statistics.tweetsPerDj"></dj-tweets>
+                </article>
+            </div>
+            <div class="tile is-parent">
+                <article class="tile is-child metric-panel">
                     <word-occurrences :occurrences="statistics.lastWordOccurrences"></word-occurrences>
                 </article>
             </div>
@@ -43,9 +48,10 @@
     import Highscores from './Highscores.vue';
     import WordOccurrences from './WordOccurrences.vue';
     import HypeMeter from './HypeMeter.vue';
+    import DjTweets from './DjTweets.vue';
 
     export default {
-        components: { TweetsPerMinute, TotalTweets, TotalUsers, Highscores, HypeMeter, WordOccurrences },
+        components: { TweetsPerMinute, TotalTweets, TotalUsers, Highscores, HypeMeter, WordOccurrences, DjTweets },
 
         data() {
             return {

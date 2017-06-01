@@ -10,11 +10,15 @@
 
 <script>
     export default {
-        props: ['djs'],
+        props: ['tweetsPerDj'],
 
-        computed: {
+        methods: {
             djCount(id) {
-                return this.djs.filter(dj => dj.id == id)[0];
+                if (! this.tweetsPerDj) {
+                    return 0;
+                }
+
+                return this.tweetsPerDj.filter(dj => dj.id == id)[0].count;
             }
         }
     }
