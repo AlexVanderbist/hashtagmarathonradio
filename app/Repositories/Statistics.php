@@ -25,7 +25,7 @@ class Statistics
     private static function fetchUsersWithMostTweets()
     {
         return DB::table('users')
-            ->select('users.*', DB::raw('count(*) as tweets_count'))
+            ->select('users.screen_name', DB::raw('count(*) as tweets_count'))
             ->join('tweets', 'users.id', 'tweets.user_id')
             ->groupBy('id')
             ->orderBy('tweets_count', 'desc')
