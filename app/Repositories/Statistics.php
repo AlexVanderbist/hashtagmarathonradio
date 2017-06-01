@@ -27,7 +27,7 @@ class Statistics
         return DB::table('users')
             ->select('users.screen_name', DB::raw('count(*) as tweets_count'))
             ->join('tweets', 'users.id', 'tweets.user_id')
-            ->groupBy('id')
+            ->groupBy('users.id')
             ->orderBy('tweets_count', 'desc')
             ->limit(50)
             ->get();
