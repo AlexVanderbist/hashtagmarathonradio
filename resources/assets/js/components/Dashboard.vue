@@ -1,18 +1,22 @@
 <template>
     <div class="tile is-ancestor">
+        <div class="tile is-vertical">
+            <div class="tile is-parent">
+                <article class="tile is-child metric-panel">
+                    <total-tweets :total-tweets="statistics.totalTweets"></total-tweets>
+                </article>
+            </div>
+
+            <div class="tile is-parent">
+                <article class="tile is-child metric-panel">
+                    <total-users :total-users="statistics.totalUsers"></total-users>
+                </article>
+            </div>
+        </div>
         <div class="tile is-parent">
             <article class="tile is-child metric-panel">
+                <hype-meter :value="statistics.tweetsPerMinute"></hype-meter>
                 <tweets-per-minute :tweets-per-minute="statistics.tweetsPerMinute"></tweets-per-minute>
-            </article>
-        </div>
-        <div class="tile is-parent">
-            <article class="tile is-child metric-panel">
-                <total-tweets :total-tweets="statistics.totalTweets"></total-tweets>
-            </article>
-        </div>
-        <div class="tile is-parent">
-            <article class="tile is-child metric-panel">
-                <total-users :total-users="statistics.totalUsers"></total-users>
             </article>
         </div>
         <div class="tile is-parent">
@@ -28,9 +32,10 @@
     import TotalTweets from './TotalTweets.vue';
     import TotalUsers from './TotalUsers.vue';
     import Highscores from './Highscores.vue';
+    import HypeMeter from './HypeMeter.vue';
 
     export default {
-        components: { TweetsPerMinute, TotalTweets, TotalUsers, Highscores },
+        components: { TweetsPerMinute, TotalTweets, TotalUsers, Highscores, HypeMeter },
 
         data() {
             return {

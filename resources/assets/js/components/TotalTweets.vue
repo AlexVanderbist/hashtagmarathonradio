@@ -1,11 +1,13 @@
 <template>
     <div class="metric-panel__content">
-        <h2>tweets met #marathonradio</h2>
-
         <p class="title is-1">
-            <i class="fa fa-hashtag" aria-hidden="true"></i>
+            <span class="icon is-large">
+                <i class="fa fa-hashtag"></i>
+            </span>
             <animated-number :number="totalTweets"></animated-number>
         </p>
+
+        <h2>tweets met #marathonradio</h2>
     </div>
 </template>
 

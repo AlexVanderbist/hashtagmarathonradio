@@ -1,7 +1,7 @@
 <template>
-    <div>
+    <span>
         {{ formattedNumber }}
-    </div>
+    </span>
 </template>
 
 <script>
@@ -49,8 +49,6 @@
 
         watch:{
             number() {
-                clearInterval(this.interval);
-
                 if (this.number == this.displayNumber) {
                     return;
                 }

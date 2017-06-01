@@ -1,10 +1,16 @@
-
 $mnm-lightblue: #CFEAF4;
-$mnm-blue: #12367E;
-$primary: $mnm-blue;
+$mnm-blue: #1a98cc;
+$mnm-darkblue: #12367E;
+$mnm-red: #d31822;
+$primary: $mnm-darkblue;
 //$primary-invert: $pink-invert;
 
+$fa-font-path: "../../../node_modules/font-awesome/fonts" !default;
+@import "~font-awesome/scss/font-awesome.scss";
+
 @import "~bulma/bulma";
+
+@import "_gauge";
 
 body {
   //padding-top: 30px;
@@ -13,9 +19,15 @@ body {
   background: #FFF url('http://playground.mnm.be/steunstudenten/img/background.png') top center repeat;
 }
 
-.scrollable {
-  max-height: 50vh;
-  overflow-y: scroll;
+.scrollable-flex {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  &--list {
+    height: 0px;
+    flex: 1 1 auto;
+    overflow-y: scroll;
+  }
 }
 
 .metric-panel {
@@ -46,24 +58,26 @@ body {
   background: none;
 }
 
-
 h1, h2 {
   font-weight: bold;
-  color: $mnm-blue;
 }
-h3 {
-  font-size: 16px;
+
+.title {
+  color: $mnm-darkblue;
 }
 
 .djStat {
   margin-bottom: 15px;
 }
+
 .djStat:last-child {
   margin-bottom: 0px;
 }
+
 .djStat h2, .djStat h3 {
   margin: 0;
 }
+
 .djStat h2 {
   padding-top: 8px;
   padding-bottom: 4px;
@@ -74,6 +88,7 @@ h3 {
   width: 100%;
   max-width: 150px;
 }
+
 .profileImg {
   background-position: center;
   background-size: cover;
@@ -83,12 +98,15 @@ h3 {
   float: left;
   margin-right: 10px;
 }
+
 .profileImg.tom {
   //background-image: url('../img/tom.jpg');
 }
+
 .profileImg.julie {
   //background-image: url('../img/julie.jpg');
 }
+
 .profileImg.peter {
   //background-image: url('../img/peter.jpg');
 }

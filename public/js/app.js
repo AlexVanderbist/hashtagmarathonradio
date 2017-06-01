@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 59);
+/******/ 	return __webpack_require__(__webpack_require__.s = 67);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -528,7 +528,7 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(43)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(46)))
 
 /***/ }),
 /* 3 */
@@ -538,7 +538,7 @@ var Component = __webpack_require__(1)(
   /* script */
   __webpack_require__(32),
   /* template */
-  __webpack_require__(51),
+  __webpack_require__(55),
   /* scopeId */
   null,
   /* cssModules */
@@ -866,9 +866,9 @@ module.exports = g;
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-__webpack_require__(38);
+__webpack_require__(39);
 
-window.Vue = __webpack_require__(57);
+window.Vue = __webpack_require__(65);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -876,7 +876,7 @@ window.Vue = __webpack_require__(57);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('dashboard', __webpack_require__(46));
+Vue.component('dashboard', __webpack_require__(49));
 
 var app = new Vue({
   el: '#app'
@@ -1742,9 +1742,9 @@ module.exports = function spread(callback) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_shifty__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_shifty__ = __webpack_require__(48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_shifty___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_shifty__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_numeral__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_numeral__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_numeral___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_numeral__);
 //
 //
@@ -1801,8 +1801,6 @@ __WEBPACK_IMPORTED_MODULE_1_numeral___default.a.locale('nl');
         number: function number() {
             var _this = this;
 
-            clearInterval(this.interval);
-
             if (this.number == this.displayNumber) {
                 return;
             }
@@ -1826,14 +1824,16 @@ __WEBPACK_IMPORTED_MODULE_1_numeral___default.a.locale('nl');
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__TweetsPerMinute_vue__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__TweetsPerMinute_vue__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__TweetsPerMinute_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__TweetsPerMinute_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__TotalTweets_vue__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__TotalTweets_vue__ = __webpack_require__(52);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__TotalTweets_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__TotalTweets_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__TotalUsers_vue__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__TotalUsers_vue__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__TotalUsers_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__TotalUsers_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Highscores_vue__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Highscores_vue__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Highscores_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__Highscores_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__HypeMeter_vue__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__HypeMeter_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__HypeMeter_vue__);
 //
 //
 //
@@ -1859,6 +1859,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+
 
 
 
@@ -1866,7 +1871,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    components: { TweetsPerMinute: __WEBPACK_IMPORTED_MODULE_0__TweetsPerMinute_vue___default.a, TotalTweets: __WEBPACK_IMPORTED_MODULE_1__TotalTweets_vue___default.a, TotalUsers: __WEBPACK_IMPORTED_MODULE_2__TotalUsers_vue___default.a, Highscores: __WEBPACK_IMPORTED_MODULE_3__Highscores_vue___default.a },
+    components: { TweetsPerMinute: __WEBPACK_IMPORTED_MODULE_0__TweetsPerMinute_vue___default.a, TotalTweets: __WEBPACK_IMPORTED_MODULE_1__TotalTweets_vue___default.a, TotalUsers: __WEBPACK_IMPORTED_MODULE_2__TotalUsers_vue___default.a, Highscores: __WEBPACK_IMPORTED_MODULE_3__Highscores_vue___default.a, HypeMeter: __WEBPACK_IMPORTED_MODULE_4__HypeMeter_vue___default.a },
 
     data: function data() {
         return {
@@ -1954,8 +1959,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__AnimatedNumber__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__AnimatedNumber___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__AnimatedNumber__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_shifty__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_shifty___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_shifty__);
+//
+//
+//
 //
 //
 //
@@ -1971,9 +1979,188 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['totalTweets'],
+    props: {
+        value: {
+            type: Number,
+            default: 0
+        }
+    },
 
-    components: { AnimatedNumber: __WEBPACK_IMPORTED_MODULE_0__AnimatedNumber___default.a }
+    watch: {
+        value: function value(newValue, oldValue) {
+            var _this = this;
+
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_shifty__["tween"])({
+                from: { n: oldValue },
+                to: { n: newValue },
+                duration: 5000,
+                easing: 'easeInOutQuad',
+                step: function step(state) {
+                    return _this.updateInput(state.n);
+                }
+            });
+        }
+    },
+
+    mounted: function mounted() {
+        var _this2 = this;
+
+        this.svg = this.$el.querySelector(".typeRange");
+        this.output = this.$el.querySelector(".output");
+        this.outline = this.$el.querySelector(".outline");
+        this.fill = this.$el.querySelector(".fill");
+        this.center = this.$el.querySelector(".center");
+        this.needle = this.$el.querySelector(".needle");
+        this.scale = this.$el.querySelector(".scale");
+
+        this.rad = Math.PI / 180;
+        this.NS = "http:\/\/www.w3.org/2000/svg";
+
+        this.draw();
+
+        // events
+        window.addEventListener("resize", function () {
+            return _this2.draw();
+        }, false);
+    },
+
+    methods: {
+        draw: function draw() {
+            this.calculateSize();
+
+            this.drawBackground();
+
+            this.drawScale();
+
+            this.updateInput(this.value);
+        },
+        calculateSize: function calculateSize() {
+            this.W = parseInt(window.getComputedStyle(this.svg, null).getPropertyValue("width"));
+            this.H = this.W / 2;
+            this.svg.setAttribute("height", this.H);
+            this.offset = 40;
+            this.cx = ~~(this.W / 2);
+            this.cy = this.H - 5;
+
+            this.r1 = this.cx - this.offset;
+            this.delta = ~~(this.r1 / 4);
+
+            this.x1 = this.cx + this.r1, this.y1 = this.cy;
+            this.r2 = this.r1 - this.delta;
+
+            this.x2 = this.offset, this.y2 = this.cy;
+            this.x3 = this.x1 - this.delta, this.y3 = this.cy;
+        },
+        drawBackground: function drawBackground() {
+            var d1 = this.getD1(this.cx, this.cy, this.r1, this.offset, this.delta);
+            this.outline.setAttributeNS(null, "d", d1);
+        },
+        drawScale: function drawScale() {
+            var sr1 = this.r1 + 5;
+            var sr2 = this.r2 - 5;
+            var srT = this.r1 + 20;
+
+            this.clearRect(this.scale);
+
+            var n = 0;
+            for (var sa = -180; sa <= 0; sa += 18) {
+                var sx1 = this.cx + sr1 * Math.cos(sa * this.rad);
+                var sy1 = this.cy + sr1 * Math.sin(sa * this.rad);
+                var sx2 = this.cx + sr2 * Math.cos(sa * this.rad);
+                var sy2 = this.cy + sr2 * Math.sin(sa * this.rad);
+                var sxT = this.cx + srT * Math.cos(sa * this.rad);
+                var syT = this.cy + srT * Math.sin(sa * this.rad);
+
+                var scaleLine = document.createElementNS(this.NS, "line");
+                var scaleLineObj = {
+                    class: "scale",
+                    x1: sx1,
+                    y1: sy1,
+                    x2: sx2,
+                    y2: sy2
+                };
+                this.setSVGAttributes(scaleLine, scaleLineObj);
+
+                this.scale.appendChild(scaleLine);
+
+                var scaleText = document.createElementNS(this.NS, "text");
+                var scaleTextObj = {
+                    class: "scale",
+                    x: sxT,
+                    y: syT
+                };
+                this.setSVGAttributes(scaleText, scaleTextObj);
+                scaleText.textContent = n * 10;
+                this.scale.appendChild(scaleText);
+
+                n++;
+            }
+        },
+        updateInput: function updateInput(value) {
+            this.output.innerHTML = Math.round(value);
+
+            value = value > 100 ? 100 : value;
+
+            var pa = value * 1.8 - 180;
+
+            var x = this.cx + this.r1 * Math.cos(pa * this.rad);
+            var y = this.cy + this.r1 * Math.sin(pa * this.rad);
+            var lx = this.cx - x;
+            var ly = this.cy - y;
+
+            var a = Math.atan2(ly, lx) / this.rad - 180;
+
+            this.drawNeedle(a);
+
+            // Background
+            var d2 = this.getD2(a);
+            this.fill.setAttributeNS(null, "d", d2);
+        },
+        getD1: function getD1() {
+            var x1 = this.cx + this.r1,
+                y1 = this.cy;
+            var x2 = this.offset,
+                y2 = this.cy;
+            var r2 = this.r1 - this.delta;
+            var x3 = x1 - this.delta,
+                y3 = this.cy;
+            var d1 = "M " + x1 + ", " + y1 + " A" + this.r1 + "," + this.r1 + " 0 0 0 " + x2 + "," + y2 + " H" + (this.offset + this.delta) + " A" + r2 + "," + r2 + " 0 0 1 " + x3 + "," + y3 + " z";
+            return d1;
+        },
+        getD2: function getD2(a) {
+            a *= this.rad;
+            var r2 = this.r1 - this.delta;
+            var x4 = this.cx + this.r1 * Math.cos(a);
+            var y4 = this.cy + this.r1 * Math.sin(a);
+            var x5 = this.cx + r2 * Math.cos(a);
+            var y5 = this.cy + r2 * Math.sin(a);
+            var d2 = "M " + x4 + ", " + y4 + " A" + this.r1 + "," + this.r1 + " 0 0 0 " + this.x2 + "," + this.y2 + " H" + (this.offset + this.delta) + " A" + r2 + "," + r2 + " 0 0 1 " + x5 + "," + y5 + " z";
+            return d2;
+        },
+        drawNeedle: function drawNeedle(a) {
+            var nx1 = this.cx + 5 * Math.cos((a - 90) * this.rad);
+            var ny1 = this.cy + 5 * Math.sin((a - 90) * this.rad);
+
+            var nx2 = this.cx + (this.r1 + 15) * Math.cos(a * this.rad);
+            var ny2 = this.cy + (this.r1 + 15) * Math.sin(a * this.rad);
+
+            var nx3 = this.cx + 5 * Math.cos((a + 90) * this.rad);
+            var ny3 = this.cy + 5 * Math.sin((a + 90) * this.rad);
+
+            var points = nx1 + "," + ny1 + " " + nx2 + "," + ny2 + " " + nx3 + "," + ny3;
+            this.needle.setAttributeNS(null, "points", points);
+        },
+        clearRect: function clearRect(node) {
+            while (node.firstChild) {
+                node.removeChild(node.firstChild);
+            }
+        },
+        setSVGAttributes: function setSVGAttributes(elmt, oAtt) {
+            for (var prop in oAtt) {
+                elmt.setAttributeNS(null, prop, oAtt[prop]);
+            }
+        }
+    }
 });
 
 /***/ }),
@@ -1995,11 +2182,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['totalUsers'],
+    props: ['totalTweets'],
 
     components: { AnimatedNumber: __WEBPACK_IMPORTED_MODULE_0__AnimatedNumber___default.a }
 });
@@ -2016,6 +2205,32 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['totalUsers'],
+
+    components: { AnimatedNumber: __WEBPACK_IMPORTED_MODULE_0__AnimatedNumber___default.a }
+});
+
+/***/ }),
+/* 38 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__AnimatedNumber__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__AnimatedNumber___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__AnimatedNumber__);
 //
 //
 //
@@ -2044,15 +2259,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_laravel_echo__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_laravel_echo__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_laravel_echo__);
 
-window._ = __webpack_require__(41);
+window._ = __webpack_require__(44);
 
 window.axios = __webpack_require__(14);
 
@@ -2068,7 +2283,7 @@ if (token) {
 
 
 
-window.Pusher = __webpack_require__(44);
+window.Pusher = __webpack_require__(47);
 
 window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
     broadcaster: 'pusher',
@@ -2077,8 +2292,10 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
 });
 
 /***/ }),
-/* 39 */,
-/* 40 */
+/* 40 */,
+/* 41 */,
+/* 42 */,
+/* 43 */
 /***/ (function(module, exports) {
 
 var asyncGenerator = function () {
@@ -2851,7 +3068,7 @@ var Echo = function () {
 module.exports = Echo;
 
 /***/ }),
-/* 41 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -19940,10 +20157,10 @@ module.exports = Echo;
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(9), __webpack_require__(58)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(9), __webpack_require__(66)(module)))
 
 /***/ }),
-/* 42 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! @preserve
@@ -20966,7 +21183,7 @@ return numeral;
 
 
 /***/ }),
-/* 43 */
+/* 46 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -21156,7 +21373,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 44 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*!
@@ -25294,7 +25511,7 @@ return /******/ (function(modules) { // webpackBootstrap
 ;
 
 /***/ }),
-/* 45 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*! 2.1.0 */
@@ -25302,14 +25519,14 @@ return /******/ (function(modules) { // webpackBootstrap
 //# sourceMappingURL=shifty.js.map
 
 /***/ }),
-/* 46 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(1)(
   /* script */
   __webpack_require__(33),
   /* template */
-  __webpack_require__(54),
+  __webpack_require__(59),
   /* scopeId */
   null,
   /* cssModules */
@@ -25336,14 +25553,14 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 47 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(1)(
   /* script */
   __webpack_require__(34),
   /* template */
-  __webpack_require__(55),
+  __webpack_require__(60),
   /* scopeId */
   null,
   /* cssModules */
@@ -25370,14 +25587,48 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 48 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(1)(
   /* script */
   __webpack_require__(35),
   /* template */
-  __webpack_require__(56),
+  __webpack_require__(57),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "/Users/alex/WebDev/hashtagmarathonradio/resources/assets/js/components/HypeMeter.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] HypeMeter.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-43812006", Component.options)
+  } else {
+    hotAPI.reload("data-v-43812006", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 52 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(36),
+  /* template */
+  __webpack_require__(61),
   /* scopeId */
   null,
   /* cssModules */
@@ -25404,14 +25655,14 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 49 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(36),
+  __webpack_require__(37),
   /* template */
-  __webpack_require__(52),
+  __webpack_require__(56),
   /* scopeId */
   null,
   /* cssModules */
@@ -25438,14 +25689,14 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 50 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(37),
+  __webpack_require__(38),
   /* template */
-  __webpack_require__(53),
+  __webpack_require__(58),
   /* scopeId */
   null,
   /* cssModules */
@@ -25472,11 +25723,11 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 51 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_vm._v("\n    " + _vm._s(_vm.formattedNumber) + "\n")])
+  return _c('span', [_vm._v("\n    " + _vm._s(_vm.formattedNumber) + "\n")])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -25487,25 +25738,26 @@ if (false) {
 }
 
 /***/ }),
-/* 52 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "metric-panel__content"
-  }, [_c('h2', [_vm._v("twitteraars met #marathonradio")]), _vm._v(" "), _c('p', {
+  }, [_c('p', {
     staticClass: "title is-1"
-  }, [_c('i', {
-    staticClass: "fa fa-twitter",
-    attrs: {
-      "aria-hidden": "true"
-    }
-  }), _vm._v(" "), _c('animated-number', {
+  }, [_vm._m(0), _vm._v(" "), _c('animated-number', {
     attrs: {
       "number": _vm.totalUsers
     }
-  })], 1)])
-},staticRenderFns: []}
+  })], 1), _vm._v(" "), _c('h2', [_vm._v("twitteraars met #marathonradio")])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('span', {
+    staticClass: "icon is-large"
+  }, [_c('i', {
+    staticClass: "fa fa-twitter"
+  })])
+}]}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
@@ -25515,24 +25767,62 @@ if (false) {
 }
 
 /***/ }),
-/* 53 */
+/* 57 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "gauge-container"
+  }, [_c('svg', {
+    staticClass: "typeRange",
+    staticStyle: {
+      "width": "100%"
+    },
+    attrs: {
+      "height": "165",
+      "width": "330",
+      "view-box": "0 0 330 165"
+    }
+  }, [_c('g', {
+    staticClass: "scale",
+    attrs: {
+      "stroke": "red"
+    }
+  }), _vm._v(" "), _c('path', {
+    staticClass: "outline",
+    attrs: {
+      "d": ""
+    }
+  }), _vm._v(" "), _c('path', {
+    staticClass: "fill",
+    attrs: {
+      "d": ""
+    }
+  }), _vm._v(" "), _c('polygon', {
+    staticClass: "needle",
+    attrs: {
+      "points": "220,10 300,210 220,250 140,210"
+    }
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "output"
+  }, [_vm._v("30")])])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-43812006", module.exports)
+  }
+}
+
+/***/ }),
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "metric-panel__content"
-  }, [_c('h2', [_vm._v("tweets per minuut")]), _vm._v(" "), _c('p', {
-    staticClass: "title is-1"
-  }, [_c('i', {
-    staticClass: "fa fa-bomb",
-    attrs: {
-      "aria-hidden": "true"
-    }
-  }), _vm._v(" "), _c('animated-number', {
-    attrs: {
-      "number": _vm.tweetsPerMinute
-    }
-  })], 1), _vm._v(" "), _c('small', [_vm._v("\n        Da's\n        "), _c('animated-number', {
+  }, [_c('h2', [_vm._v("tweets per minuut")]), _vm._v(" "), _c('small', [_vm._v("\n        Da's\n        "), _c('animated-number', {
     staticStyle: {
       "display": "inline"
     },
@@ -25551,21 +25841,15 @@ if (false) {
 }
 
 /***/ }),
-/* 54 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "tile is-ancestor"
   }, [_c('div', {
-    staticClass: "tile is-parent"
-  }, [_c('article', {
-    staticClass: "tile is-child metric-panel"
-  }, [_c('tweets-per-minute', {
-    attrs: {
-      "tweets-per-minute": _vm.statistics.tweetsPerMinute
-    }
-  })], 1)]), _vm._v(" "), _c('div', {
+    staticClass: "tile is-vertical"
+  }, [_c('div', {
     staticClass: "tile is-parent"
   }, [_c('article', {
     staticClass: "tile is-child metric-panel"
@@ -25580,6 +25864,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('total-users', {
     attrs: {
       "total-users": _vm.statistics.totalUsers
+    }
+  })], 1)])]), _vm._v(" "), _c('div', {
+    staticClass: "tile is-parent"
+  }, [_c('article', {
+    staticClass: "tile is-child metric-panel"
+  }, [_c('hype-meter', {
+    attrs: {
+      "value": _vm.statistics.tweetsPerMinute
+    }
+  }), _vm._v(" "), _c('tweets-per-minute', {
+    attrs: {
+      "tweets-per-minute": _vm.statistics.tweetsPerMinute
     }
   })], 1)]), _vm._v(" "), _c('div', {
     staticClass: "tile is-parent"
@@ -25600,11 +25896,13 @@ if (false) {
 }
 
 /***/ }),
-/* 55 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('div', {
+  return _c('div', {
+    staticClass: "scrollable-flex"
+  }, [_c('div', {
     staticClass: "metric-panel__content"
   }, [_c('h2', [_vm._v("Meeste tweets")]), _vm._v(" "), _c('p', {
     staticClass: "control has-icons-left"
@@ -25630,7 +25928,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }
   }), _vm._v(" "), _vm._m(0)])]), _vm._v(" "), _c('ul', {
-    staticClass: "scrollable fancy-list"
+    staticClass: "scrollable-flex--list fancy-list"
   }, _vm._l((_vm.displayedUsers), function(user, index) {
     return _c('li', [_c('p', {
       staticStyle: {
@@ -25661,25 +25959,26 @@ if (false) {
 }
 
 /***/ }),
-/* 56 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "metric-panel__content"
-  }, [_c('h2', [_vm._v("tweets met #marathonradio")]), _vm._v(" "), _c('p', {
+  }, [_c('p', {
     staticClass: "title is-1"
-  }, [_c('i', {
-    staticClass: "fa fa-hashtag",
-    attrs: {
-      "aria-hidden": "true"
-    }
-  }), _vm._v(" "), _c('animated-number', {
+  }, [_vm._m(0), _vm._v(" "), _c('animated-number', {
     attrs: {
       "number": _vm.totalTweets
     }
-  })], 1)])
-},staticRenderFns: []}
+  })], 1), _vm._v(" "), _c('h2', [_vm._v("tweets met #marathonradio")])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('span', {
+    staticClass: "icon is-large"
+  }, [_c('i', {
+    staticClass: "fa fa-hashtag"
+  })])
+}]}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
@@ -25689,7 +25988,10 @@ if (false) {
 }
 
 /***/ }),
-/* 57 */
+/* 62 */,
+/* 63 */,
+/* 64 */,
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35387,7 +35689,7 @@ module.exports = Vue$3;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(9)))
 
 /***/ }),
-/* 58 */
+/* 66 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -35415,7 +35717,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 59 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(10);

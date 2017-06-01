@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="scrollable-flex">
         <div class="metric-panel__content">
             <h2>Meeste tweets</h2>
             <p class="control has-icons-left">
@@ -9,7 +9,7 @@
                 </span>
             </p>
         </div>
-        <ul class="scrollable fancy-list">
+        <ul class="scrollable-flex--list fancy-list">
             <li v-for="(user, index) in displayedUsers">
                 <p style="flex-grow: 1">
                     {{ index + 1 }}.
