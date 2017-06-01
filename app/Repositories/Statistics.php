@@ -12,11 +12,10 @@ class Statistics
 {
     public static function getTweetsPerDj()
     {
-        return collect([1, 2, 3])->map(function ($id) {
-            return [
-                'id' => $id,
-                'count' => DB::table('tweets')->where('dj', $id)->count()
-            ];
+        return collect(config('hmr.djs'))->map(function ($dj) {
+            $count = DB::table('tweets')->where('dj', $dj['id'])->count();
+
+            return $dj + ['count' => $count];
         });
     }
 

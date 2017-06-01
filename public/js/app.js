@@ -35891,21 +35891,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['tweetsPerDj'],
-
-    methods: {
-        djCount: function djCount(id) {
-            if (!this.tweetsPerDj) {
-                return 0;
-            }
-
-            return this.tweetsPerDj.filter(function (dj) {
-                return dj.id == id;
-            })[0].count;
-        }
-    }
+    props: ['tweetsPerDj']
 });
 
 /***/ }),
@@ -35947,8 +35945,30 @@ module.exports = Component.exports
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('ul', [_c('li', [_vm._v(_vm._s(_vm.djCount(1)))]), _vm._v(" "), _c('li', [_vm._v(_vm._s(_vm.djCount(2)))]), _vm._v(" "), _c('li', [_vm._v(_vm._s(_vm.djCount(3)))])])])
-},staticRenderFns: []}
+  return _c('div', {
+    staticClass: "metric-panel__content"
+  }, _vm._l((_vm.tweetsPerDj), function(dj) {
+    return _c('article', {
+      staticClass: "media"
+    }, [_vm._m(0, true), _vm._v(" "), _c('div', {
+      staticClass: "media-content"
+    }, [_c('div', {
+      staticClass: "content"
+    }, [_c('p', {
+      staticClass: "title is-1"
+    }, [_vm._v("\n                    " + _vm._s(dj.count) + "\n                ")]), _vm._v(" "), _c('h2', [_vm._v("tweets tijdens " + _vm._s(dj.name))])])])])
+  }))
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('figure', {
+    staticClass: "media-left"
+  }, [_c('p', {
+    staticClass: "image is-64x64"
+  }, [_c('img', {
+    attrs: {
+      "src": "http://bulma.io/images/placeholders/128x128.png"
+    }
+  })])])
+}]}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
