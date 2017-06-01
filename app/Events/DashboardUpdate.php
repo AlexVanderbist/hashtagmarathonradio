@@ -19,6 +19,8 @@ class DashboardUpdate implements ShouldBroadcastNow
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
+    public $broadcastQueue = 'events';
+
     public $totalTweets = 0;
     public $totalUsers = 0;
     public $tweetsPerMinute = 0;

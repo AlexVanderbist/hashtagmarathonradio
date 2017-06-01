@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Events\DashboardUpdate;
+use App\Jobs\BroadcastDashboardUpdate;
 use Illuminate\Cache\Repository;
 use Illuminate\Console\Command;
 use React\EventLoop\Factory;
@@ -44,7 +45,7 @@ class BroadcastDashboardEvents extends Command
 
         $loop = Factory::create();
 
-        $seconds = 5;
+        $seconds = 4;
 
         $loop->addPeriodicTimer($seconds, function () use ($lastRestart, $loop) {
             if ($this->shouldRestart($lastRestart)) {
