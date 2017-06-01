@@ -42,8 +42,6 @@ class BroadcastDashboardEvents extends Command
     {
         $lastRestart = $this->getTimestampOfLastRestart();
 
-        event(new DashboardUpdate());
-
         $loop = Factory::create();
 
         $seconds = 5;
