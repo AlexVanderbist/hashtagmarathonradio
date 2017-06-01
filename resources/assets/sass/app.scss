@@ -24,7 +24,7 @@ body {
   flex-direction: column;
   height: 100%;
   &--list {
-    height: 0px;
+    height: 14.2rem;
     flex: 1 1 auto;
     overflow-y: scroll;
     @include mobile {

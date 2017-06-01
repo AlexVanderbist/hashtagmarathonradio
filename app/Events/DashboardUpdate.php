@@ -23,6 +23,7 @@ class DashboardUpdate implements ShouldBroadcast
     public $tweetsPerMinute = 0;
     public $usersWithMostTweets = [];
     public $lastWordOccurrences = [];
+    public $processingTime = 0;
 
     public function __construct()
     {
@@ -46,7 +47,7 @@ class DashboardUpdate implements ShouldBroadcast
 
         $this->lastWordOccurrences = Statistics::getWordOccurrences(Carbon::parse('30 minutes ago'), 10);
 
-        echo 'Processing time: ' . (microtime(true) - $startTime) . "\n";
+        $this->processingTime = microtime(true) - $startTime;
     }
 
     public function broadcastOn(): Channel
