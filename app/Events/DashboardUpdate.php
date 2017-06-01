@@ -15,9 +15,11 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Cache;
 use DB;
 
-class DashboardUpdate implements ShouldBroadcastNow
+class DashboardUpdate implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
+
+    public $broadcastQueue = 'events';
 
     public $totalTweets = 0;
     public $totalUsers = 0;
