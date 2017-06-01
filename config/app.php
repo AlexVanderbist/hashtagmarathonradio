@@ -230,6 +230,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'TwitterStreamingApi' => Spatie\LaravelTwitterStreamingApi\TwitterStreamingApiFacade::class,
         'Twitter' => Thujohn\Twitter\Facades\Twitter::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
 
     ],
 

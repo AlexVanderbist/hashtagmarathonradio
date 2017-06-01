@@ -13,6 +13,7 @@ use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Cache;
 use DB;
+use DebugBar;
 
 class DashboardUpdate implements ShouldBroadcast
 {

@@ -20,6 +20,8 @@ Route::get('/countdown', function () {
 });
 
 Route::get('/debug', function () {
+    \Debugbar::enable();
+    
     dump(new \App\Events\DashboardUpdate());
 });
 
