@@ -2,6 +2,7 @@
 
 namespace App\Events;
 
+use App\Repositories\Statistics;
 use App\Tweet;
 use App\User;
 use Carbon\Carbon;
@@ -20,7 +21,8 @@ class DashboardUpdate implements ShouldBroadcast
     public $totalTweets = 0;
     public $totalUsers = 0;
     public $tweetsPerMinute = 0;
-    public $usersWithMostTweets = 0;
+    public $usersWithMostTweets = [];
+    public $lastWordOccurrences = [];
 
     public function __construct()
     {
@@ -41,6 +43,8 @@ class DashboardUpdate implements ShouldBroadcast
                 ->orderBy('tweets_count', 'desc')
                 ->limit(50)
                 ->get();
+
+        $this->lastWordOccurrences = Statistics::getWordOccurrences(Carbon::parse('30 minutes ago'), 10);
 
         echo 'Processing time: ' . (microtime(true) - $startTime) . "\n";
     }
