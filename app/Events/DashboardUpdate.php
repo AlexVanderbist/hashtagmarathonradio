@@ -25,6 +25,7 @@ class DashboardUpdate implements ShouldBroadcastNow
     public $usersWithMostTweets = [];
     public $lastWordOccurrences = [];
     public $processingTime = 0;
+    public $tweetsPerDj = [];
 
     public function __construct()
     {
@@ -40,6 +41,8 @@ class DashboardUpdate implements ShouldBroadcastNow
         $this->usersWithMostTweets = Statistics::getUsersWithMostTweets();
 
         $this->lastWordOccurrences = Statistics::getWordOccurrences(Carbon::parse('30 minutes ago'), 10);
+
+        $this->tweetsPerDj = Statistics::getTweetsPerDj();
 
         $this->processingTime = round(microtime(true) - $startTime, 2);
     }

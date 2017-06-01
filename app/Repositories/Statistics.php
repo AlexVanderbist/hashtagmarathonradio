@@ -10,6 +10,16 @@ use DB;
 
 class Statistics
 {
+    public static function getTweetsPerDj()
+    {
+        return collect([1, 2, 3])->map(function ($id) {
+            return [
+                'id' => $id,
+                'count' => DB::table('tweets')->where('dj', $id)->count()
+            ];
+        });
+    }
+
     public static function getUsersWithMostTweets()
     {
         return Cache::remember('usersWithMostTweets', 1, function () {
