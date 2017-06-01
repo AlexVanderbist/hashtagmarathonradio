@@ -35,7 +35,7 @@ class DashboardUpdate implements ShouldBroadcast
 
         $this->totalUsers = User::count();
 
-        $this->tweetsPerMinute = Tweet::where('tweeted_at', '>', Carbon::now()->subMinute())->count();
+        $this->tweetsPerMinute = DB::table('tweets')->where('tweeted_at', '>', Carbon::now()->subMinute())->count();
 
         $this->usersWithMostTweets =  Statistics::getUsersWithMostTweets();
 
