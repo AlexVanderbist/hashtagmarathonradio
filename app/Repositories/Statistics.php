@@ -12,9 +12,7 @@ class Statistics
 {
     public static function getUsersWithMostTweets()
     {
-        dump('getting users w most');
         return Cache::remember('usersWithMostTweets', 1, function () {
-            dump('get new from db');
             return self::fetchUsersWithMostTweets();
         });
     }
