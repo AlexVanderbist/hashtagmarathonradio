@@ -53,6 +53,8 @@
     export default {
         components: { TweetsPerMinute, TotalTweets, TotalUsers, Highscores, HypeMeter, WordOccurrences, DjTweets },
 
+        props: ['initialStatistics'],
+
         data() {
             return {
                 statistics: {}
@@ -60,6 +62,7 @@
         },
 
         mounted() {
+            this.statistics = this.initialStatistics;
             this.listen();
         },
 
@@ -67,8 +70,6 @@
             listen() {
                 Echo.channel('dashboard')
                     .listen('DashboardUpdate', (e) => {
-                        console.log(e);
-
                         this.statistics = e;
                     });
             }

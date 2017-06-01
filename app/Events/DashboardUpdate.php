@@ -19,32 +19,16 @@ class DashboardUpdate implements ShouldBroadcastNow
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public $totalTweets = 0;
-    public $totalUsers = 0;
-    public $tweetsPerMinute = 0;
-    public $usersWithMostTweets = [];
-    public $lastWordOccurrences = [];
-    public $processingTime = 0;
-    public $tweetsPerDj = [];
+    public $statistics = [];
 
     public function __construct()
     {
-        // TODO: move to repository
-        $startTime = microtime(true);
+        $this->statistics = Statistics::getDashboardStatistics();
+    }
 
-        $this->totalTweets = Tweet::count();
-
-        $this->totalUsers = User::count();
-
-        $this->tweetsPerMinute = DB::table('tweets')->where('tweeted_at', '>', Carbon::now()->subMinute())->count();
-
-        $this->usersWithMostTweets = Statistics::getUsersWithMostTweets();
-
-        $this->lastWordOccurrences = Statistics::getWordOccurrences(Carbon::parse('30 minutes ago'), 10);
-
-        $this->tweetsPerDj = Statistics::getTweetsPerDj();
-
-        $this->processingTime = round(microtime(true) - $startTime, 2);
+    public function broadcastWith(): array
+    {
+        return $this->statistics;
     }
 
     public function broadcastOn(): Channel

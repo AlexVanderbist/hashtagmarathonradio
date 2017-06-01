@@ -1901,12 +1901,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
     components: { TweetsPerMinute: __WEBPACK_IMPORTED_MODULE_0__TweetsPerMinute_vue___default.a, TotalTweets: __WEBPACK_IMPORTED_MODULE_1__TotalTweets_vue___default.a, TotalUsers: __WEBPACK_IMPORTED_MODULE_2__TotalUsers_vue___default.a, Highscores: __WEBPACK_IMPORTED_MODULE_3__Highscores_vue___default.a, HypeMeter: __WEBPACK_IMPORTED_MODULE_5__HypeMeter_vue___default.a, WordOccurrences: __WEBPACK_IMPORTED_MODULE_4__WordOccurrences_vue___default.a, DjTweets: __WEBPACK_IMPORTED_MODULE_6__DjTweets_vue___default.a },
 
+    props: ['initialStatistics'],
+
     data: function data() {
         return {
             statistics: {}
         };
     },
     mounted: function mounted() {
+        this.statistics = this.initialStatistics;
         this.listen();
     },
 
@@ -1916,8 +1919,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this = this;
 
             Echo.channel('dashboard').listen('DashboardUpdate', function (e) {
-                console.log(e);
-
                 _this.statistics = e;
             });
         }
@@ -35955,8 +35956,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, [_c('div', {
       staticClass: "content"
     }, [_c('p', {
-      staticClass: "title is-1"
-    }, [_vm._v("\n                    " + _vm._s(dj.count) + "\n                ")]), _vm._v(" "), _c('h2', [_vm._v("tweets tijdens " + _vm._s(dj.name))])])])])
+      staticClass: "title is-2"
+    }, [_vm._v("\n                    " + _vm._s(dj.count) + "\n                ")]), _vm._v(" "), _c('h2', {
+      staticClass: "subtitle is-4"
+    }, [_vm._v("tweets tijdens " + _vm._s(dj.name))])])])])
   }))
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('figure', {

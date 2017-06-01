@@ -34,7 +34,7 @@
 
         <section class="section">
             <div class="container is-fluid">
-                <dashboard></dashboard>
+                <dashboard :initial-statistics="{{ json_encode($statistics) }}"></dashboard>
             </div>
         </section>
 

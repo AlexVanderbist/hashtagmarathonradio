@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Tweet;
+use App\User;
 use Carbon\Carbon;
 use Illuminate\Support\Collection;
 use Cache;
@@ -10,6 +11,29 @@ use DB;
 
 class Statistics
 {
+    public static function getDashboardStatistics(bool $fromCache = false): array
+    {
+        if ($fromCache && Cache::has('dashboardStatistics')) {
+            return Cache::get('dashboardStatistics');
+        }
+
+        $startTime = microtime(true);
+
+        $statistics = [
+            'processingTime' => round(microtime(true) - $startTime, 2),
+            'totalTweets' => Tweet::count(),
+            'totalUsers' => User::count(),
+            'tweetsPerMinute' => DB::table('tweets')->where('tweeted_at', '>', Carbon::now()->subMinute())->count(),
+            'usersWithMostTweets' => self::getUsersWithMostTweets(),
+            'lastWordOccurrences' => self::getWordOccurrences(Carbon::parse('30 minutes ago'), 10),
+            'tweetsPerDj' => self::getTweetsPerDj(),
+        ];
+
+        Cache::forever('dashboardStatistics', $statistics);
+
+        return $statistics;
+    }
+
     public static function getTweetsPerDj()
     {
         return collect(config('hmr.djs'))->map(function ($dj) {

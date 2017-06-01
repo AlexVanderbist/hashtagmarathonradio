@@ -8,10 +8,10 @@
             </figure>
             <div class="media-content">
                 <div class="content">
-                    <p class="title is-1">
+                    <p class="title is-2">
                         {{ dj.count }}
                     </p>
-                    <h2>tweets tijdens {{dj.name}}</h2>
+                    <h2 class="subtitle is-4">tweets tijdens {{dj.name}}</h2>
                 </div>
             </div>
         </article>
