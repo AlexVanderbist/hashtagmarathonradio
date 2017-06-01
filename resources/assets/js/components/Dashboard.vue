@@ -70,6 +70,8 @@
             listen() {
                 Echo.channel('dashboard')
                     .listen('DashboardUpdate', (e) => {
+                        console.log(e);
+
                         this.statistics = e;
                     });
             }

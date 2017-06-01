@@ -26,6 +26,7 @@ class Statistics
             'tweetsPerMinute' => DB::table('tweets')->where('tweeted_at', '>', Carbon::now()->subMinute())->count(),
             'usersWithMostTweets' => self::getUsersWithMostTweets(),
             'lastWordOccurrences' => self::getWordOccurrences(Carbon::parse('30 minutes ago'), 10),
+            'allTimeWordOccurrences' => self::getAllTimeWordOccurrences(),
             'tweetsPerDj' => self::getTweetsPerDj(),
         ];
 
@@ -45,7 +46,7 @@ class Statistics
 
     public static function getUsersWithMostTweets()
     {
-        return Cache::remember('usersWithMostTweets', 1, function () {
+        return Cache::remember('usersWithMostTweets', 5, function () {
             return self::fetchUsersWithMostTweets();
         });
     }
@@ -64,6 +65,18 @@ class Statistics
             ->orderBy('tweets_count', 'desc')
             ->limit(50)
             ->get();
+    }
+
+    public static function getAllTimeWordOccurrences()
+    {
+        return Cache::remember('allTimeWordOccurrences', 5, function () {
+            return self::getWordOccurrences();
+        });
+    }
+
+    public static function cacheAllTimeWordOccurrences()
+    {
+        Cache::forever('allTimeWordOccurrences', self::getWordOccurrences());
     }
 
     public static function getWordOccurrences(?Carbon $since = null, int $limit = 100)

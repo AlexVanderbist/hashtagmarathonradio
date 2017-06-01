@@ -1919,6 +1919,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this = this;
 
             Echo.channel('dashboard').listen('DashboardUpdate', function (e) {
+                console.log(e);
+
                 _this.statistics = e;
             });
         }
@@ -35882,6 +35884,8 @@ if (false) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__AnimatedNumber_vue__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__AnimatedNumber_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__AnimatedNumber_vue__);
 //
 //
 //
@@ -35903,7 +35907,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
+    components: { AnimatedNumber: __WEBPACK_IMPORTED_MODULE_0__AnimatedNumber_vue___default.a },
+
     props: ['tweetsPerDj']
 });
 
@@ -35957,7 +35965,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       staticClass: "content"
     }, [_c('p', {
       staticClass: "title is-2"
-    }, [_vm._v("\n                    " + _vm._s(dj.count) + "\n                ")]), _vm._v(" "), _c('h2', {
+    }, [_c('animated-number', {
+      attrs: {
+        "number": dj.count
+      }
+    })], 1), _vm._v(" "), _c('h2', {
       staticClass: "subtitle is-4"
     }, [_vm._v("tweets tijdens " + _vm._s(dj.name))])])])])
   }))

@@ -9,7 +9,7 @@
             <div class="media-content">
                 <div class="content">
                     <p class="title is-2">
-                        {{ dj.count }}
+                        <animated-number :number="dj.count"></animated-number>
                     </p>
                     <h2 class="subtitle is-4">tweets tijdens {{dj.name}}</h2>
                 </div>
@@ -19,7 +19,11 @@
 </template>
 
 <script>
+    import AnimatedNumber from './AnimatedNumber.vue';
+
     export default {
+        components: { AnimatedNumber },
+
         props: ['tweetsPerDj'],
     }
 </script>
