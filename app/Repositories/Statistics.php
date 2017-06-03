@@ -20,7 +20,6 @@ class Statistics
         $startTime = microtime(true);
 
         $statistics = [
-            'processingTime' => round(microtime(true) - $startTime, 2),
             'totalTweets' => Tweet::count(),
             'totalUsers' => User::count(),
             'tweetsPerMinute' => DB::table('tweets')->where('tweeted_at', '>', Carbon::now()->subMinute())->count(),
@@ -28,6 +27,7 @@ class Statistics
             'lastWordOccurrences' => self::getWordOccurrences(Carbon::parse('30 minutes ago'), 10),
             'allTimeWordOccurrences' => self::getAllTimeWordOccurrences(),
             'tweetsPerDj' => self::getTweetsPerDj(),
+            'processingTime' => round(microtime(true) - $startTime, 2),
         ];
 
         Cache::forever('dashboardStatistics', $statistics);
