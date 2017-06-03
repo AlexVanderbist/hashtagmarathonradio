@@ -1,13 +1,10 @@
 <template>
     <div class="scrollable-flex">
         <div class="metric-panel__content">
-            <h2>
-                <span class="icon">
-                    <i class="fa fa-heart"></i>
-                </span>
+            <h2 class="title is-4">
                 Populairste woorden
             </h2>
-            <p>(laatste 30 minuten)</p>
+            <p class="subtitle is-6">(laatste 30 minuten)</p>
         </div>
         <ul class="scrollable-flex--list fancy-list">
             <li v-for="(occurrence, index) in occurrences">

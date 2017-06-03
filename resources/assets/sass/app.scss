@@ -23,11 +23,13 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
+  flex-grow: 1;
   &--list {
     height: 14.2rem;
     flex: 1 1 auto;
     overflow-y: scroll;
     @include mobile {
+      height: 300px;
       height:30vh;
     }
   }
@@ -64,6 +66,16 @@ body {
   background: none;
 }
 
+.image.is-round {
+  img {
+    border-radius: 100%;
+  }
+}
+
+.m-b-0 {
+  margin-bottom: 0;
+}
+
 h1, h2 {
   font-weight: bold;
 }
@@ -72,47 +84,8 @@ h1, h2 {
   color: $mnm-darkblue;
 }
 
-.djStat {
-  margin-bottom: 15px;
-}
-
-.djStat:last-child {
-  margin-bottom: 0px;
-}
-
-.djStat h2, .djStat h3 {
-  margin: 0;
-}
-
-.djStat h2 {
-  padding-top: 8px;
-  padding-bottom: 4px;
-}
-
 #logo {
   margin-bottom: 20px;
   width: 100%;
   max-width: 150px;
-}
-
-.profileImg {
-  background-position: center;
-  background-size: cover;
-  height: 70px;
-  width: 70px;
-  border-radius: 100%;
-  float: left;
-  margin-right: 10px;
-}
-
-.profileImg.tom {
-  //background-image: url('../img/tom.jpg');
-}
-
-.profileImg.julie {
-  //background-image: url('../img/julie.jpg');
-}
-
-.profileImg.peter {
-  //background-image: url('../img/peter.jpg');
 }

@@ -2007,6 +2007,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['users'],
@@ -2041,6 +2044,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_shifty__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_shifty___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_shifty__);
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2344,9 +2352,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
 //
 //
 //
@@ -25930,11 +25935,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "metric-panel__content"
-  }, [_c('h2', [_c('span', {
-    staticClass: "icon"
-  }, [_c('i', {
-    staticClass: "fa fa-heart"
-  })]), _vm._v("\n            Populairste woorden\n        ")]), _vm._v(" "), _c('p', [_vm._v("(laatste 30 minuten)")])])
+  }, [_c('h2', {
+    staticClass: "title is-4"
+  }, [_vm._v("\n            Populairste woorden\n        ")]), _vm._v(" "), _c('p', {
+    staticClass: "subtitle is-6"
+  }, [_vm._v("(laatste 30 minuten)")])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
@@ -25978,7 +25983,7 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
+  return _c('div', [_vm._m(0), _vm._v(" "), _c('div', {
     staticClass: "gauge-container"
   }, [_c('svg', {
     staticClass: "typeRange",
@@ -26012,8 +26017,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   })]), _vm._v(" "), _c('div', {
     staticClass: "output"
-  }, [_vm._v("30")])])
-},staticRenderFns: []}
+  }, [_vm._v("30")])])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "metric-panel__content m-b-0"
+  }, [_c('h2', {
+    staticClass: "title is-4"
+  }, [_vm._v("Hype Meter")])])
+}]}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
@@ -26037,20 +26048,20 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, [_c('div', {
       staticClass: "content"
     }, [_c('p', {
-      staticClass: "title is-2"
+      staticClass: "title is-3"
     }, [_c('animated-number', {
       attrs: {
         "number": dj.count
       }
     })], 1), _vm._v(" "), _c('h2', {
-      staticClass: "subtitle is-4"
+      staticClass: "subtitle is-5 is-strong"
     }, [_vm._v("tweets tijdens " + _vm._s(dj.name))])])])])
   }))
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('figure', {
     staticClass: "media-left"
   }, [_c('p', {
-    staticClass: "image is-64x64"
+    staticClass: "image is-64x64 is-round"
   }, [_c('img', {
     attrs: {
       "src": "http://bulma.io/images/placeholders/128x128.png"
@@ -26172,7 +26183,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "scrollable-flex"
   }, [_c('div', {
     staticClass: "metric-panel__content"
-  }, [_c('h2', [_vm._v("Meeste tweets")]), _vm._v(" "), _c('p', {
+  }, [_c('h2', {
+    staticClass: "title is-4"
+  }, [_vm._v("\n            Grootste Twitteraars\n        ")]), _vm._v(" "), _c('p', {
     staticClass: "control has-icons-left"
   }, [_c('input', {
     directives: [{

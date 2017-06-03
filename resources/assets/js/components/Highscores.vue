@@ -1,7 +1,10 @@
 <template>
     <div class="scrollable-flex">
         <div class="metric-panel__content">
-            <h2>Meeste tweets</h2>
+            <h2 class="title is-4">
+                <!--<i class="fa fa-star"></i>-->
+                Grootste Twitteraars
+            </h2>
             <p class="control has-icons-left">
                 <input class="input is-small" type="text" v-model="searchQuery" placeholder="Zoek jouw @Twitter...">
                 <span class="icon is-small is-left">

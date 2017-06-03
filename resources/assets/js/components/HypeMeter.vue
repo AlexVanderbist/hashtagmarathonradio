@@ -1,14 +1,19 @@
 <template>
-    <div class="gauge-container">
-        <svg class="typeRange" height="165" width="330" view-box="0 0 330 165" style="width:100%">
+    <div>
+        <div class="metric-panel__content m-b-0">
+            <h2 class="title is-4">Hype Meter</h2>
+        </div>
+        <div class="gauge-container">
+            <svg class="typeRange" height="165" width="330" view-box="0 0 330 165" style="width:100%">
 
-            <g class="scale" stroke="red"></g>
+                <g class="scale" stroke="red"></g>
 
-            <path class="outline" d=""/>
-            <path class="fill" d=""/>
-            <polygon class="needle" points="220,10 300,210 220,250 140,210"/>
-        </svg>
-        <div class="output">30</div>
+                <path class="outline" d=""/>
+                <path class="fill" d=""/>
+                <polygon class="needle" points="220,10 300,210 220,250 140,210"/>
+            </svg>
+            <div class="output">30</div>
+        </div>
     </div>
 </template>
 
