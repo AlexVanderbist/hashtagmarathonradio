@@ -1809,7 +1809,7 @@ __WEBPACK_IMPORTED_MODULE_1_numeral___default.a.locale('nl');
         }
     },
 
-    ready: function ready() {
+    mounted: function mounted() {
         this.displayNumber = this.number ? this.number : 0;
     },
 

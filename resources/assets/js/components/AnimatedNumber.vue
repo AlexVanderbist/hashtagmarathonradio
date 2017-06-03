@@ -52,7 +52,7 @@
             }
         },
 
-        ready() {
+        mounted() {
             this.displayNumber = this.number ? this.number : 0;
         },
 
