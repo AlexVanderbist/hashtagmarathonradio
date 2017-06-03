@@ -63,6 +63,9 @@
 
         mounted() {
             this.statistics = this.initialStatistics;
+
+            console.log(this.statistics.tweetsPerDj);
+
             this.listen();
         },
 

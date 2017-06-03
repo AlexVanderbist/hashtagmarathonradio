@@ -29,7 +29,16 @@
     numeral.locale('nl');
 
     export default {
-        props: ['number', 'format'],
+        props: {
+            number: {
+                type: [String, Number],
+                default: 0
+            },
+            format: {
+                type: String,
+                default: '0,0'
+            }
+        },
 
         data() {
             return {
