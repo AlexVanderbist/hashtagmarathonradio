@@ -3,7 +3,7 @@
         <article class="media" v-for="dj in tweetsPerDj">
             <figure class="media-left">
                 <p class="image is-64x64 is-round">
-                    <img src="http://bulma.io/images/placeholders/128x128.png">
+                    <img :src="`images/${dj.name}.jpg`">
                 </p>
             </figure>
             <div class="media-content">

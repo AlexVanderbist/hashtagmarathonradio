@@ -1920,8 +1920,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     mounted: function mounted() {
         this.statistics = this.initialStatistics;
 
-        console.log(this.statistics.tweetsPerDj);
-
         this.listen();
     },
 
@@ -26043,7 +26041,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, _vm._l((_vm.tweetsPerDj), function(dj) {
     return _c('article', {
       staticClass: "media"
-    }, [_vm._m(0, true), _vm._v(" "), _c('div', {
+    }, [_c('figure', {
+      staticClass: "media-left"
+    }, [_c('p', {
+      staticClass: "image is-64x64 is-round"
+    }, [_c('img', {
+      attrs: {
+        "src": ("images/" + (dj.name) + ".jpg")
+      }
+    })])]), _vm._v(" "), _c('div', {
       staticClass: "media-content"
     }, [_c('div', {
       staticClass: "content"
@@ -26057,17 +26063,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       staticClass: "subtitle is-5 is-strong"
     }, [_vm._v("tweets tijdens " + _vm._s(dj.name))])])])])
   }))
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('figure', {
-    staticClass: "media-left"
-  }, [_c('p', {
-    staticClass: "image is-64x64 is-round"
-  }, [_c('img', {
-    attrs: {
-      "src": "http://bulma.io/images/placeholders/128x128.png"
-    }
-  })])])
-}]}
+},staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
