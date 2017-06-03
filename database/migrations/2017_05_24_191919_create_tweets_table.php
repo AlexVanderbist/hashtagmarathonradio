@@ -17,6 +17,8 @@ class CreateTweetsTable extends Migration
             $table->bigInteger('id')->unsigned()->unique();
             $table->bigInteger('user_id')->unsigned();
             $table->text('text');
+            $table->bigInteger('retweeted_id')->unsigned()->nullable();
+            $table->bigInteger('reply_to_id')->unsigned()->nullable();
             $table->string('country_code')->nullable();
             $table->string('place_name')->nullable();
             $table->dateTime('tweeted_at');

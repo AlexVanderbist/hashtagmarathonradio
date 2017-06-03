@@ -27,7 +27,6 @@ class ProcessTweet implements ShouldQueue
 
     public function handle()
     {
-
         $formattedTweetedAt = Carbon::parse($this->tweet['created_at']);
         $formattedTweetedAt->setTimezone('Europe/Brussels');
 
@@ -45,6 +44,8 @@ class ProcessTweet implements ShouldQueue
             [
                 'user_id' => $this->tweet['user']['id'],
                 'text' => $this->tweet['text'],
+                'reply_to_id' => $this->tweet['in_reply_to_status_id'],
+                'retweeted_id' => $this->tweet['retweeted_status']['id'] ?? null,
                 'country_code' => $this->tweet['place']['country_code'] ?? null,
                 'place_name' => $this->tweet['place']['full_name'] ?? null,
                 'fetched' => $this->tweet['fetched'] ?? false,
