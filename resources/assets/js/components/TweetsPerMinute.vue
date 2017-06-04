@@ -2,11 +2,11 @@
     <div class="metric-panel__content">
         <h2>tweets per minuut</h2>
 
-        <small>
+        <h3 class="subtitle is-6">
             Da's
             <animated-number :number="tweetsPerSecond" format="0.0[0]" style="display:inline"></animated-number>
             tweets per seconde!
-        </small>
+        </h3>
     </div>
 </template>
 

@@ -25955,12 +25955,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('div', {
     staticClass: "metric-panel__content"
   }, [_c('p', {
-    staticClass: "title is-1"
+    staticClass: "title is-1 is-spaced"
   }, [_vm._m(0), _vm._v(" "), _c('animated-number', {
     attrs: {
       "number": _vm.totalUsers
     }
-  })], 1), _vm._v(" "), _c('h2', [_vm._v("twitteraars met #marathonradio")])])
+  })], 1), _vm._v(" "), _c('h2', {
+    staticClass: "subtitle is-4"
+  }, [_vm._v("twitteraars met #marathonradio")])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('span', {
     staticClass: "icon is-large"
@@ -26079,7 +26081,9 @@ if (false) {
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "metric-panel__content"
-  }, [_c('h2', [_vm._v("tweets per minuut")]), _vm._v(" "), _c('small', [_vm._v("\n        Da's\n        "), _c('animated-number', {
+  }, [_c('h2', [_vm._v("tweets per minuut")]), _vm._v(" "), _c('h3', {
+    staticClass: "subtitle is-6"
+  }, [_vm._v("\n        Da's\n        "), _c('animated-number', {
     staticStyle: {
       "display": "inline"
     },
@@ -26243,12 +26247,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('div', {
     staticClass: "metric-panel__content"
   }, [_c('p', {
-    staticClass: "title is-1"
+    staticClass: "title is-1 is-spaced"
   }, [_vm._m(0), _vm._v(" "), _c('animated-number', {
     attrs: {
       "number": _vm.totalTweets
     }
-  })], 1), _vm._v(" "), _c('h2', [_vm._v("tweets met #marathonradio")])])
+  })], 1), _vm._v(" "), _c('h2', {
+    staticClass: "subtitle is-4"
+  }, [_vm._v("tweets met #marathonradio")])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('span', {
     staticClass: "icon is-large"

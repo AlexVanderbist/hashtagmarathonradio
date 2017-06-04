@@ -12,10 +12,18 @@
 */
 
 Route::get('/', function () {
+    if (\Carbon\Carbon::now()->gte(\Carbon\Carbon::parse(config('hmr.start_time')))) {
+        return redirect('/live');
+    }
+
     return redirect('/countdown');
 });
 
 Route::get('/countdown', function () {
+    if (\Carbon\Carbon::now()->gte(\Carbon\Carbon::parse(config('hmr.start_time')))) {
+        return redirect('/live');
+    }
+
     return view('countdown');
 });
 
@@ -23,4 +31,4 @@ Route::get('/debug', function () {
     dump(new \App\Events\DashboardUpdate());
 });
 
-Route::get('/beta', 'DashboardController@index');
+Route::get('/live', 'DashboardController@index');

@@ -131,6 +131,13 @@ function timeToLaunch() {
 }
 
 function countDownTimer() {
+    if (new Date() > targetDate) {
+        setTimeout(function () {
+            window.location = '/live';
+        }, 1000);
+
+        return;
+    }
 
     // Figure out the time to launch
     timeToLaunch();
