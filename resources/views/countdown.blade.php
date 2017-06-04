@@ -68,6 +68,10 @@
 
     ga('create', 'UA-78767994-1', 'auto');
     ga('send', 'pageview');
+
+    setInterval(function() {
+        ga('send', 'event', 'HeartBeat', '60s');
+    }, 30000);
 </script>
 </body>
 
