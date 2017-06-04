@@ -29,7 +29,7 @@
         methods: {
             djPhotoUrl(dj) {
                 const name = dj.name.toLowerCase();
-                
+
                 return `images/${name}.jpg`;
             }
         }
