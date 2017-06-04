@@ -26,18 +26,23 @@
         <section class="hero">
             <div class="hero-body p-b-0">
                 <div class="container">
-                    <img class="is-pulled-left" src="{{asset("images/logo.png")}}" alt="Marathonradio" id="logo">
-
-                    <h1 class="title">
-                        De onofficiële #marathonradio statistieken!
-                    </h1>
-                    <h2 class="subtitle">
-                        <day-count></day-count>
-                    </h2>
-                    <p>
-                        Teller loopt sinds 5 juni 2017 en vernieuwt iedere 5 seconden.<br/>
-                        <last-update></last-update>
-                    </p>
+                    <div class="columns">
+                        <div class="column is-narrow-tablet is-narrow-desktop has-text-centered">
+                            <img src="{{asset("images/logo.png")}}" alt="Marathonradio" id="logo">
+                        </div>
+                        <div class="column">
+                            <h1 class="title">
+                                De onofficiële #marathonradio statistieken!
+                            </h1>
+                            <h2 class="subtitle">
+                                <day-count></day-count>
+                            </h2>
+                            <p>
+                                Teller loopt sinds 5 juni 2017 en vernieuwt iedere 5 seconden.<br/>
+                                <last-update></last-update>
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
