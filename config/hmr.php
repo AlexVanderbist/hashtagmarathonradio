@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'search_query' => '#manchester',
-    'stream_query' => '#manchester',
+    'search_query' => '#londonbridge',
+    'stream_query' => '#londonbridge',
     'start_time' => '2016-06-05 10:00:00',
     'djs' => [
         [
