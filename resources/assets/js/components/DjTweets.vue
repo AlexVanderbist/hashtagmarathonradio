@@ -3,7 +3,7 @@
         <article class="media" v-for="dj in tweetsPerDj">
             <figure class="media-left">
                 <p class="image is-64x64 is-round">
-                    <img :src="`images/${dj.name}.jpg`">
+                    <img :src="djPhotoUrl(dj)">
                 </p>
             </figure>
             <div class="media-content">
@@ -25,5 +25,13 @@
         components: { AnimatedNumber },
 
         props: ['tweetsPerDj'],
+
+        methods: {
+            djPhotoUrl(dj) {
+                const name = dj.name.toLowerCase();
+                
+                return `images/${name}.jpg`;
+            }
+        }
     }
 </script>

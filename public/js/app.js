@@ -1971,7 +1971,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
     components: { AnimatedNumber: __WEBPACK_IMPORTED_MODULE_0__AnimatedNumber_vue___default.a },
 
-    props: ['tweetsPerDj']
+    props: ['tweetsPerDj'],
+
+    methods: {
+        djPhotoUrl: function djPhotoUrl(dj) {
+            var name = dj.name.toLowerCase();
+
+            return 'images/' + name + '.jpg';
+        }
+    }
 });
 
 /***/ }),
@@ -26049,7 +26057,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       staticClass: "image is-64x64 is-round"
     }, [_c('img', {
       attrs: {
-        "src": ("images/" + (dj.name) + ".jpg")
+        "src": _vm.djPhotoUrl(dj)
       }
     })])]), _vm._v(" "), _c('div', {
       staticClass: "media-content"
