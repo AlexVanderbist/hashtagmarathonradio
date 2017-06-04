@@ -24,17 +24,20 @@
 <body>
     <div id="app">
         <section class="hero">
-            <div class="hero-body">
+            <div class="hero-body p-b-0">
                 <div class="container">
-                    <img src="{{asset("images/logo.png")}}" alt="Marathonradio" id="logo">
+                    <img class="is-pulled-left" src="{{asset("images/logo.png")}}" alt="Marathonradio" id="logo">
 
                     <h1 class="title">
                         De onofficiële #marathonradio statistieken!
                     </h1>
                     <h2 class="subtitle">
-                        Dag <span id="dayCount"></span> van Marathonradio! <small>(speciaal voor Tom ;)</small>
+                        <day-count></day-count>
                     </h2>
-                    <p>Teller loopt sinds 4 juni 2016 en vernieuwt iedere 5 seconden.<br/>Laatste update om <span id="lastRefresh"></span></p>
+                    <p>
+                        Teller loopt sinds 5 juni 2017 en vernieuwt iedere 5 seconden.<br/>
+                        <last-update></last-update>
+                    </p>
                 </div>
             </div>
         </section>

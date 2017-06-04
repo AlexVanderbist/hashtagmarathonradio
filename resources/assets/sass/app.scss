@@ -77,6 +77,10 @@ body {
   margin-bottom: 0;
 }
 
+.p-b-0 {
+  padding-bottom: 0;
+}
+
 h1, h2 {
   font-weight: bold;
 }
@@ -86,7 +90,7 @@ h1, h2 {
 }
 
 #logo {
-  margin-bottom: 20px;
+  margin-right: 20px;
   width: 100%;
   max-width: 150px;
 }

@@ -71,7 +71,10 @@
             listen() {
                 Echo.channel('dashboard')
                     .listen('DashboardUpdate', (e) => {
-                        console.log(e);
+                        if (window.debug) console.log(e);
+
+                        window.bus.$emit('DashboardUpdate');
+
 
                         this.statistics = e;
                     });
