@@ -19,10 +19,7 @@ body {
 }
 
 body {
-  background-color: #31aedc;
-  background-image: url('images/background.jpg');
-  background-position: center center;
-  background-attachment: fixed;
+  background: #31aedc url('../images/countdown_background.jpg') fixed center center;
   background-size: cover;
 
   font-family: 'Montserrat', sans-serif;
