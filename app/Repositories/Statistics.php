@@ -8,6 +8,7 @@ use Carbon\Carbon;
 use Illuminate\Support\Collection;
 use Cache;
 use DB;
+use Twitter;
 
 class Statistics
 {
@@ -48,7 +49,10 @@ class Statistics
             return null;
         }
 
-        return collect($winningTweet->toArray())->only(['user', 'text', 'tweeted_at']);
+        $winningTweet = collect($winningTweet->toArray())->only(['user', 'text', 'tweeted_at']);
+        $winningTweet['text'] = Twitter::linkify($winningTweet['text']);
+
+        return $winningTweet;
     }
 
     public static function getTweetsPerDj()
