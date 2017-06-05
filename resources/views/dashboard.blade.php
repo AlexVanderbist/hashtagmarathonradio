@@ -55,10 +55,17 @@
 
         <footer class="footer">
             <div class="container">
-                <div class="content has-text-centered">
-                    Het MNM &amp; Marathonradio logo zijn eigendom van MNM.<br>
-                    Niet officieel geassocieerd met MNM.<br>
-                    Gemaakt door <a target="_blank" href="https://twitter.com/AlexVanderbist">&commat;AlexVanderbist</a>
+                <div class="content is-small has-text-centered">
+                    <p>
+                        Het MNM &amp; Marathonradio logo zijn eigendom van MNM.<br>
+                        Gemaakt door <a target="_blank" href="https://twitter.com/AlexVanderbist">&commat;AlexVanderbist</a>.
+                    </p>
+                    <p>
+                        Powered by<br>
+                        <a href="http://www.pusher.com/" target="_blank">
+                            <img src="images/pusher.png" alt="Pusher" class="sponsor">
+                        </a>
+                    </p>
                 </div>
             </div>
         </footer>
