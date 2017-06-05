@@ -78,7 +78,7 @@ class FetchTweets extends Command
                     $tweetedAt->setTimezone('Europe/Brussels');
 
                     // Check if we've reached old tweets or the start of hmr
-                    if($tweet->id <= $highestTweetId) { // TODO : || $tweetedAt->lt($startDate)) {
+                    if($tweet->id <= $highestTweetId || $tweetedAt->lt($startDate)) {
                         $reachedOldTweets = true;
 
                         return false;

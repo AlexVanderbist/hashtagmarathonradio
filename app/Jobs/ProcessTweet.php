@@ -31,7 +31,7 @@ class ProcessTweet implements ShouldQueue
         $formattedTweetedAt->setTimezone('Europe/Brussels');
 
         if ($formattedTweetedAt->lt(Carbon::parse(config('hmr.start_time')))) {
-//            return true;
+            return true;
         }
 
         User::firstOrCreate(
