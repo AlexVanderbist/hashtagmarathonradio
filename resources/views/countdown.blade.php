@@ -70,8 +70,8 @@
     ga('send', 'pageview');
 
     setInterval(function() {
-        ga('send', 'event', 'HeartBeat', '60s');
-    }, 30000);
+        ga('send', 'event', 'HeartBeat', '4min');
+    }, 4*1000*60);
 </script>
 </body>
 
