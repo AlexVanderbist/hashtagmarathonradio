@@ -29,6 +29,7 @@ class Statistics
             'allTimeWordOccurrences' => self::getAllTimeWordOccurrences(),
             'tweetsPerDj' => self::getTweetsPerDj(),
             'winningTweet' => self::getWinningTweet(),
+            'lastTweet' => self::getLastTweet(),
             'processingTime' => round(microtime(true) - $startTime, 2),
         ];
 
@@ -37,22 +38,35 @@ class Statistics
         return $statistics;
     }
 
+    public static function getLastTweet()
+    {
+        $lastTweet = Tweet::orderBy('tweeted_at', 'desc')->first();
+
+        return self::formatTweet($lastTweet);
+    }
+
     public static function getWinningTweet()
     {
         $winningTweet = Tweet::orderBy('tweeted_at', 'asc')
-            ->skip(100)
+            ->skip(10000)
             ->take(1)
-            ->first()
-            ->load('user');
+            ->first();
 
-        if (! $winningTweet) {
+        return self::formatTweet($winningTweet);
+    }
+
+    private static function formatTweet($tweet)
+    {
+        if (! $tweet) {
             return null;
         }
 
-        $winningTweet = collect($winningTweet->toArray())->only(['user', 'text', 'tweeted_at']);
-        $winningTweet['text'] = Twitter::linkify($winningTweet['text']);
+        $tweet = collect($tweet->load('user')->toArray())
+            ->only(['user', 'text', 'tweeted_at']);
 
-        return $winningTweet;
+        $tweet['text'] = Twitter::linkify($tweet['text']);
+
+        return $tweet;
     }
 
     public static function getTweetsPerDj()
