@@ -27,12 +27,28 @@ class Statistics
             'lastWordOccurrences' => self::getWordOccurrences(Carbon::parse('30 minutes ago'), 10),
             'allTimeWordOccurrences' => self::getAllTimeWordOccurrences(),
             'tweetsPerDj' => self::getTweetsPerDj(),
+            'winningTweet' => self::getWinningTweet(),
             'processingTime' => round(microtime(true) - $startTime, 2),
         ];
 
         Cache::forever('dashboardStatistics', $statistics);
 
         return $statistics;
+    }
+
+    public static function getWinningTweet()
+    {
+        $winningTweet = Tweet::orderBy('tweeted_at', 'asc')
+            ->skip(100)
+            ->take(1)
+            ->first()
+            ->load('user');
+
+        if (! $winningTweet) {
+            return null;
+        }
+
+        return collect($winningTweet->toArray())->only(['user', 'text', 'tweeted_at']);
     }
 
     public static function getTweetsPerDj()
