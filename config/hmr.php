@@ -3,7 +3,7 @@
 return [
     'search_query' => '#marathonradio',
     'stream_query' => '#marathonradio',
-    'start_time' => '2017-06-05 08:00:00',
+    'start_time' => '2017-06-05 08:05:00',
     'djs' => [
         [
             'id' => 1,
