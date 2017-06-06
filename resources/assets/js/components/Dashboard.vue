@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="tile is-ancestor">
-            <div class="tile is-vertical">
+            <div class="tile is-vertical is-4">
                 <div class="tile is-parent">
                     <article class="tile is-child metric-panel">
                         <total-tweets :total-tweets="statistics.totalTweets"></total-tweets>
@@ -14,25 +14,25 @@
                     </article>
                 </div>
             </div>
-            <div class="tile is-parent">
+            <div class="tile is-parent is-4">
                 <article class="tile is-child metric-panel">
                     <hype-meter :value="statistics.tweetsPerMinute"></hype-meter>
                     <tweets-per-minute :tweets-per-minute="statistics.tweetsPerMinute"></tweets-per-minute>
                 </article>
             </div>
-            <div class="tile is-parent">
+            <div class="tile is-parent is-4">
                 <article class="tile is-child metric-panel">
                     <highscores :users="statistics.usersWithMostTweets"></highscores>
                 </article>
             </div>
         </div>
         <div class="tile is-ancestor">
-            <div class="tile is-parent">
+            <div class="tile is-parent is-4">
                 <article class="tile is-child metric-panel">
                     <dj-tweets :tweets-per-dj="statistics.tweetsPerDj"></dj-tweets>
                 </article>
             </div>
-            <div class="tile is-parent is-vertical">
+            <div class="tile is-parent is-vertical is-4">
                 <article class="tile is-child metric-panel">
                     <last-tweet :tweet="statistics.lastTweet" :total-tweets="statistics.totalTweets" :winning-tweet="statistics.winningTweet"></last-tweet>
                 </article>
@@ -40,7 +40,7 @@
                     <winning-tweet :winning-tweet="statistics.winningTweet"></winning-tweet>
                 </article>
             </div>
-            <div class="tile is-parent">
+            <div class="tile is-parent is-4">
                 <article class="tile is-child metric-panel">
                     <word-occurrences :occurrences="statistics.lastWordOccurrences"></word-occurrences>
                 </article>
