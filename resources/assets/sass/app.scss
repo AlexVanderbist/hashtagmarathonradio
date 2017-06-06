@@ -43,6 +43,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  overflow: hidden;
   .metric-panel__content {
     padding: 0.75em;
   }
