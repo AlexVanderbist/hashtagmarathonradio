@@ -32,6 +32,14 @@
                     <dj-tweets :tweets-per-dj="statistics.tweetsPerDj"></dj-tweets>
                 </article>
             </div>
+            <div class="tile is-parent is-vertical">
+                <article class="tile is-child metric-panel">
+                    <last-tweet :tweet="statistics.lastTweet" :total-tweets="statistics.totalTweets" :winning-tweet="statistics.winningTweet"></last-tweet>
+                </article>
+                <article class="tile is-child metric-panel" v-if="statistics.winningTweet">
+                    <winning-tweet :winning-tweet="statistics.winningTweet"></winning-tweet>
+                </article>
+            </div>
             <div class="tile is-parent">
                 <article class="tile is-child metric-panel">
                     <word-occurrences :occurrences="statistics.lastWordOccurrences"></word-occurrences>
@@ -49,9 +57,11 @@
     import WordOccurrences from './WordOccurrences.vue';
     import HypeMeter from './HypeMeter.vue';
     import DjTweets from './DjTweets.vue';
+    import WinningTweet from './WinningTweet.vue';
+    import LastTweet from './LastTweet.vue';
 
     export default {
-        components: { TweetsPerMinute, TotalTweets, TotalUsers, Highscores, HypeMeter, WordOccurrences, DjTweets },
+        components: { TweetsPerMinute, TotalTweets, TotalUsers, Highscores, HypeMeter, WordOccurrences, DjTweets, WinningTweet, LastTweet },
 
         props: ['initialStatistics'],
 

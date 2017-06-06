@@ -12,3 +12,8 @@ Vue.component('last-update', require('./components/LastUpdate.vue'));
 const app = new Vue({
     el: '#app'
 });
+
+import numeral from 'numeral';
+import 'numeral/locales/nl-nl';
+
+numeral.locale('nl-nl');
