@@ -48,7 +48,7 @@ class Statistics
     public static function getWinningTweet()
     {
         $winningTweet = Tweet::orderBy('tweeted_at', 'asc')
-            ->skip(10000)
+            ->skip(50000)
             ->take(1)
             ->first();
 

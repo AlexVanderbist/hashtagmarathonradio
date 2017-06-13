@@ -1,7 +1,7 @@
 <template>
     <div class="metric-panel__content" v-if="winningTweet">
         <h2 class="title is-4">
-            10.000ste Tweet
+            {{ milestone }}ste Tweet
         </h2>
         <tweet :tweet="winningTweet"></tweet>
     </div>
@@ -13,6 +13,6 @@
     export default {
         components: {Tweet},
 
-        props: ['winningTweet'],
+        props: ['winningTweet', 'milestone'],
     }
 </script>
