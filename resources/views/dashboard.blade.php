@@ -38,7 +38,7 @@
                                 <day-count></day-count>
                             </h2>
                             <p>
-                                Teller loopt sinds 5 juni 2017 en vernieuwt iedere 5 seconden.<br/>
+                                Teller loopt sinds 3 juni 2018 en vernieuwt iedere 5 seconden.<br/>
                                 <last-update></last-update>
                             </p>
                         </div>
@@ -59,12 +59,6 @@
                     <p>
                         Het MNM &amp; Marathonradio logo zijn eigendom van MNM.<br>
                         Gemaakt door <a target="_blank" href="https://twitter.com/AlexVanderbist">&commat;AlexVanderbist</a>.
-                    </p>
-                    <p>
-                        Powered by<br>
-                        <a href="http://www.pusher.com/" target="_blank">
-                            <img src="images/pusher.png" alt="Pusher" class="sponsor">
-                        </a>
                     </p>
                 </div>
             </div>

@@ -37,10 +37,7 @@
                     <last-tweet :tweet="statistics.lastTweet" :total-tweets="statistics.totalTweets" :winning-tweet="statistics.winningTweet"></last-tweet>
                 </article>
                 <article class="tile is-child metric-panel" v-if="statistics.winningTweet">
-                    <winning-tweet :milestone="'50.000'" :winning-tweet="statistics.winningTweet"></winning-tweet>
-                </article>
-                <article class="tile is-child metric-panel">
-                    <winning-tweet :milestone="'10.000'" :winning-tweet="tweet10k"></winning-tweet>
+                    <winning-tweet :milestone="'10.000'" :winning-tweet="statistics.winningTweet"></winning-tweet>
                 </article>
             </div>
             <div class="tile is-parent is-4">

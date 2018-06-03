@@ -22,7 +22,7 @@
 
         methods: {
             updateDay() {
-                this.day = moment().diff(moment("2017-06-05"), 'days') + 1;
+                this.day = moment().diff(moment("2018-06-03"), 'days') + 1;
             }
         }
     }
