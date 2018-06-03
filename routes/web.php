@@ -20,3 +20,4 @@ Route::get('/', 'CountdownController');
 Route::get('/debug', 'DebugController');
 
 Route::get('/live', 'DashboardController');
+

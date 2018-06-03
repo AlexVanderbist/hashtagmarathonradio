@@ -2,7 +2,10 @@
 
 namespace App\Providers;
 
+use Illuminate\Http\Request;
 use Illuminate\Support\ServiceProvider;
+use Laravel\Horizon\Horizon;
+use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +16,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Horizon::auth(function (Request $request) {
+            return $request->get('debug', false);
+        });
     }
 
     /**
