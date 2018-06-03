@@ -4,7 +4,7 @@
             {{ count }} Tweet
         </h2>
         <h2 class="title is-4 is-spaced" v-if="showQuestion">
-            Wie wordt de 50.000ste Tweet?
+            Wie wordt de 10.000ste Tweet?
         </h2>
         <h3 class="subtitle is-6" v-if="showQuestion">{{ count }} Tweet:</h3>
         <tweet :tweet="tweet" :show-timestamp="false"></tweet>
