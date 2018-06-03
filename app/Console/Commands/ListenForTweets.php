@@ -38,6 +38,8 @@ class ListenForTweets extends Command
 
         app(TwitterStreamingApi::class)
             ->publicStream()
+            ->whenFrom([], function() {})
+            ->whenTweets(null, function() {})
             ->whenHears([$query], function (array $tweetProperties) {
                 if (array_key_exists('limit', $tweetProperties)) {
                     Log::critical('Reached streaming limit. Godspeed to the search API.');

@@ -9,7 +9,7 @@ jQuery.extend( jQuery.easing,
     });
 
 // Start date
-const targetDate = new Date("2017/06/05 08:00:00");
+const targetDate = new Date("2018/06/03 14:00:00");
 
 // Other date related constiables
 let days;

@@ -11,13 +11,13 @@
 |
 */
 
-Route::get('/live', function () {
-    return redirect('/');
-});
+//Route::get('/live', function () {
+//    return redirect('/');
+//});
 
-Route::get('/countdown', function () {
+Route::get('/', function () {
     if (\Carbon\Carbon::now()->gte(\Carbon\Carbon::parse(config('hmr.start_time')))) {
-        return redirect('/');
+        return redirect('/live');
     }
 
     return view('countdown');
@@ -27,4 +27,4 @@ Route::get('/debug', function () {
     dump(new \App\Events\DashboardUpdate());
 });
 
-Route::get('/', 'DashboardController@index');
+Route::get('/live', 'DashboardController@index');

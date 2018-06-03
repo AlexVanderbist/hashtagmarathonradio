@@ -72,13 +72,13 @@
             return {
                 statistics: {},
                 tweet10k: {
-                    "text":"Ik ben de 10.000ste tweet van <a href=\"https://twitter.com/search?q=%23marathonradio\" target=\"_blank\">#marathonradio</a> !! =)) Hype hype <a href=\"https://twitter.com/MNMbe\" target=\"_blank\">@MNMbe</a> =D <a href=\"https://t.co/PzEU4XNdzi\" target=\"_blank\" rel=\"nofollow\">https://t.co/PzEU4XNdzi</a>",
+                    "text":"Da gaat niet zo maar he",
                     "tweeted_at":"2017-06-06 22:42:18",
                     "user": {
                         "id":2459732557,
-                        "name":"Jarno",
-                        "screen_name":"MeromYT",
-                        "profile_image_url":"http://pbs.twimg.com/profile_images/850835311584313345/4uom892s_normal.jpg"
+                        "name":"Femke",
+                        "screen_name":"Callme_Fem",
+                        "profile_image_url":"https://pbs.twimg.com/profile_images/977950579271053312/Qh_lnpF8_400x400.jpg"
                     }
                 }
             }
