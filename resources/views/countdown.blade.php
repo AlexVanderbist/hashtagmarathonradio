@@ -25,7 +25,7 @@
             <div class="box">
                 <div class="card">
                     <img class="logo" src="images/logo.png" alt="Marathonradio">
-                    <h1>Marathonradio komt terug op 5 juni!</h1>
+                    <h1>Marathonradio komt terug op 3 juni!</h1>
                     <h2>en ook HashtagMarathonradio.be is er weer bij.</h2>
 
                     <ul id="countdown">
