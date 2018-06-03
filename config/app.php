@@ -152,7 +152,6 @@ return [
         Laravel\Tinker\TinkerServiceProvider::class,
         Spatie\LaravelTwitterStreamingApi\TwitterStreamingApiServiceProvider::class,
         Thujohn\Twitter\TwitterServiceProvider::class,
-        Barryvdh\Debugbar\ServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -213,7 +212,6 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'TwitterStreamingApi' => Spatie\LaravelTwitterStreamingApi\TwitterStreamingApiFacade::class,
         'Twitter' => Thujohn\Twitter\Facades\Twitter::class,
-        'Debugbar' => Barryvdh\Debugbar\Facade::class,
 
     ],
 
