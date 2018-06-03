@@ -6,9 +6,9 @@ use App\Tweet;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Support\Collection;
-use Cache;
-use DB;
-use Twitter;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Cache;
+use Thujohn\Twitter\Facades\Twitter;
 
 class Statistics
 {

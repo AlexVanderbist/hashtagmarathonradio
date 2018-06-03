@@ -19,6 +19,7 @@ class DashboardUpdate implements ShouldBroadcastNow
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
+    /** @var array */
     public $statistics = [];
 
     public function __construct()

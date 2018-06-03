@@ -6,7 +6,7 @@ use App\Repositories\Statistics;
 
 class DashboardController extends Controller
 {
-    public function index() {
+    public function __invoke() {
         $statistics = Statistics::getDashboardStatistics(true);
 
         return view('dashboard', compact('statistics'));
