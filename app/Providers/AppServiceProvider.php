@@ -17,7 +17,11 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Horizon::auth(function (Request $request) {
-            return $request->get('debug', false);
+            if($request->get('debug', false)) {
+                $request->session()->put('horizon_access', true);
+            }
+
+            return $request->session()->get('horizon_access', false);
         });
     }
 

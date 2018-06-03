@@ -71,16 +71,16 @@
         data() {
             return {
                 statistics: {},
-                tweet10k: {
-                    "text":"Da gaat niet zo maar he",
-                    "tweeted_at":"2017-06-06 22:42:18",
-                    "user": {
-                        "id":2459732557,
-                        "name":"Femke",
-                        "screen_name":"Callme_Fem",
-                        "profile_image_url":"https://pbs.twimg.com/profile_images/977950579271053312/Qh_lnpF8_400x400.jpg"
-                    }
-                }
+                // tweet10k: {
+                //     "text":"Da gaat niet zo maar he",
+                //     "tweeted_at":"2017-06-06 22:42:18",
+                //     "user": {
+                //         "id":2459732557,
+                //         "name":"Femke",
+                //         "screen_name":"Callme_Fem",
+                //         "profile_image_url":"https://pbs.twimg.com/profile_images/977950579271053312/Qh_lnpF8_400x400.jpg"
+                //     }
+                // }
             }
         },
 
