@@ -4,6 +4,7 @@ return [
     'search_query' => '#marathonradio',
     'stream_query' => '#marathonradio',
     'start_time' => '2018-06-03 14:00:00',
+    'winning_tweet_count' => 10000,
     'djs' => [
         [
             'id' => 1,

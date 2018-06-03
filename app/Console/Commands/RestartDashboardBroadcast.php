@@ -2,11 +2,9 @@
 
 namespace App\Console\Commands;
 
-use App\Events\DashboardUpdate;
 use Carbon\Carbon;
 use Illuminate\Cache\Repository as CacheRepository;
 use Illuminate\Console\Command;
-use React\EventLoop\Factory;
 
 class RestartDashboardBroadcast extends Command
 {

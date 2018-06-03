@@ -34,11 +34,6 @@ class BroadcastDashboardEvents extends Command
         $this->cache = $cacheRepository;
     }
 
-    /**
-     * Execute the console command.
-     *
-     * @return mixed
-     */
     public function handle()
     {
         $lastRestart = $this->getTimestampOfLastRestart();
@@ -64,7 +59,7 @@ class BroadcastDashboardEvents extends Command
         $loop->run();
     }
 
-    protected function shouldRestart($lastRestart): Bool
+    protected function shouldRestart($lastRestart): bool
     {
         return $this->getTimestampOfLastRestart() != $lastRestart;
     }
