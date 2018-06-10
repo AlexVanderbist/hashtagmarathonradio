@@ -19,6 +19,10 @@ body {
   background: #FFF url('/images/bg.png') top center repeat;
 }
 
+.is-underlined {
+  text-decoration: underline;
+}
+
 .scrollable-flex {
   display: flex;
   flex-direction: column;

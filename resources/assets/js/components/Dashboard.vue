@@ -42,7 +42,7 @@
             </div>
             <div class="tile is-parent is-4">
                 <article class="tile is-child metric-panel">
-                    <word-occurrences :occurrences="statistics.lastWordOccurrences"></word-occurrences>
+                    <word-occurrences :allOccurrences="statistics.allTimeWordOccurrences" :lastOccurrences="statistics.lastWordOccurrences"></word-occurrences>
                 </article>
             </div>
         </div>
